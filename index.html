@@ -11,6 +11,7 @@ body {
     font-family: Arial, sans-serif;
     background: #0f172a;
     color: white;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -25,13 +26,13 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    position: absolute; /* Логотип фіксовано зліва */
+    position: absolute;
     left: 30px;
 }
 
 .logo {
-    width: 60px; /* Компактний розмір */
-    mix-blend-mode: lighten; /* Прибирає білий фон */
+    width: 60px;
+    mix-blend-mode: lighten;
 }
 
 header h1 {
@@ -41,7 +42,6 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* Меню по центру */
 nav {
     margin: 0 auto; 
     display: flex;
@@ -57,13 +57,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #2563eb;
+    color: #3b82f6;
 }
 
-/* Нова секція Hero: фото + текст поруч */
+/* Вступна секція */
 .intro-section {
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 60px auto;
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -94,6 +94,38 @@ nav a:hover {
     color: #cbd5e1;
 }
 
+/* НОВИЙ БЛОК: Професійний текст про асортимент */
+.services-highlight {
+    background: #1e293b;
+    padding: 60px 20px;
+    border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+}
+
+.services-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-container h3 {
+    font-size: 28px;
+    color: #f8fafc;
+    margin-bottom: 25px;
+}
+
+.services-text {
+    font-size: 19px;
+    line-height: 1.8;
+    color: #e2e8f0;
+}
+
+.highlight-blue {
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+/* Галерея */
 .gallery {
     padding: 60px 20px;
     text-align: center;
@@ -142,7 +174,6 @@ footer {
     font-size: 14px;
 }
 
-/* Адаптивність */
 @media (max-width: 850px) {
     header {
         flex-direction: column;
@@ -176,36 +207,47 @@ footer {
     
     <nav>
         <a href="#home">Головна</a>
-        <a href="#gallery">Фото магазину</a>
+        <a href="#services">Послуги</a>
+        <a href="#gallery">Асортимент</a>
         <a href="#contact">Контакти</a>
     </nav>
 </header>
 
 <section class="intro-section" id="home">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg" class="intro-image" alt="Магазин">
+    <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg" class="intro-image" alt="Магазин ГАРАЖ">
     <div class="intro-content">
-        <h2>Вітаємо в «ГАРАЖІ»</h2>
-        <p>Наш магазин у Звягелі пропонує професійний підбір автозапчастин для будь-яких марок. Ми поєднуємо величезний асортимент у наявності з можливістю швидкого замовлення ексклюзивних деталей.</p>
-        <p>Якість, надійність та індивідуальний підхід до кожного авто — це те, за що нас обирають клієнти вже багато років.</p>
-        <a class="button" href="tel:+380961606289">Зателефонувати нам</a>
+        <h2>Ваш надійний партнер на дорозі</h2>
+        <p>Магазин «ГАРАЖ» у Звягелі — це місце, де технічна експертиза поєднується з високою якістю обслуговування. Ми знаємо все про потреби вашого авто та пропонуємо перевірені рішення для його бездоганної роботи.</p>
+        <a class="button" href="tel:+380961606289">Зателефонувати менеджеру</a>
+    </div>
+</section>
+
+<section class="services-highlight" id="services">
+    <div class="services-container">
+        <h3>Комплексні рішення для будь-якого авто</h3>
+        <div class="services-text">
+            Ми пропонуємо вражаючий асортимент <span class="highlight-blue">автотоварів та аксесуарів</span> у наявності: від високоякісних мастил та фільтрів від провідних світових брендів до елементів декору та догляду за авто. 
+            <br><br>
+            Завдяки налагодженій логістиці, ми маємо унікальну можливість <span class="highlight-blue">індивідуального замовлення будь-яких запчастин</span> для автомобілів усіх марок та років випуску. Незалежно від складності деталі, ми забезпечимо її оперативну доставку та гарантовану сумісність.
+        </div>
     </div>
 </section>
 
 <section class="gallery" id="gallery">
-    <h2>Наш асортимент</h2>
+    <h2>Огляд магазину та асортименту</h2>
     <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
     <img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
     <img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
 </section>
 
 <section class="contact-section" id="contact">
-    <h2>Зв'яжіться з нами</h2>
+    <h2>Зв'яжіться з нами для консультації</h2>
     <p>📍 м. Звягель, вул. Юрія Глухова 23</p>
-    <p>📞 0 (96) 160 62 89</p>
+    <p>📞 Прямий зв'язок: 0 (96) 160 62 89</p>
 
     <div class="contact-buttons">
-        <a class="button" href="https://t.me/+380961606289" target="_blank">Написати в Telegram</a>
-        <a class="button" href="viber://chat?number=%2B380961606289" target="_blank">Написати в Viber</a>
+        <a class="button" href="https://t.me/+380961606289" target="_blank">Telegram</a>
+        <a class="button" href="viber://chat?number=%2B380961606289" target="_blank">Viber</a>
     </div>
 </section>
 
