@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
@@ -12,33 +12,37 @@ margin:0;
 font-family:Arial, sans-serif;
 background:#0b1220;
 color:white;
+scroll-behavior:smooth;
 }
 
 /* HEADER */
 
 header{
-background:linear-gradient(90deg,#020617,#020617,#0f172a);
+background:#020617;
 padding:0 40px;
-height:90px;
+height:120px;
 display:flex;
 align-items:center;
 justify-content:space-between;
+border-bottom:1px solid #1e293b;
 position:sticky;
 top:0;
 z-index:1000;
-border-bottom:1px solid #1e293b;
 }
 
+/* ЛОГО (ЗБІЛЬШЕНО) */
+
 .logo{
-height:75px;
-filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
+height:120px;
+object-fit:contain;
+filter: drop-shadow(0 0 6px rgba(255,255,255,.25));
 }
 
 /* MENU */
 
 nav{
 display:flex;
-gap:35px;
+gap:40px;
 }
 
 nav a{
@@ -57,22 +61,21 @@ color:#3b82f6;
 
 .hero{
 max-width:1200px;
-margin:70px auto;
+margin:60px auto;
 padding:0 20px;
 display:flex;
 align-items:center;
 gap:60px;
-animation:fadeUp 1s ease;
 }
 
 .hero img{
 width:420px;
 border-radius:16px;
-box-shadow:0 25px 60px rgba(0,0,0,.6);
+box-shadow:0 20px 60px rgba(0,0,0,.6);
 }
 
 .hero-text h1{
-font-size:36px;
+font-size:34px;
 color:#3b82f6;
 margin-bottom:15px;
 }
@@ -102,55 +105,27 @@ box-shadow:0 10px 30px rgba(16,185,129,.4);
 transform:translateY(-3px);
 }
 
-/* BRANDS */
+/* SERVICES */
 
-.brands{
-margin-top:80px;
-padding:60px 20px;
+.services{
 background:#020617;
+padding:70px 20px;
 text-align:center;
 border-top:1px solid #1e293b;
 border-bottom:1px solid #1e293b;
 }
 
-.brands h2{
-margin-bottom:40px;
+.services h2{
 color:#3b82f6;
+margin-bottom:30px;
 }
 
-.brand-grid{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.brand{
-background:#0f172a;
-padding:20px 30px;
-border-radius:12px;
-border:1px solid #1e293b;
-font-weight:bold;
-letter-spacing:2px;
-color:#e2e8f0;
-transition:.3s;
-}
-
-.brand:hover{
-transform:translateY(-5px);
-border-color:#3b82f6;
-}
-
-/* INFO BLOCK */
-
-.info{
+.services p{
 max-width:900px;
-margin:80px auto;
-text-align:center;
-font-size:20px;
+margin:auto;
+font-size:19px;
 line-height:1.8;
 color:#e2e8f0;
-animation:fadeUp 1.2s ease;
 }
 
 .highlight{
@@ -158,11 +133,45 @@ color:#3b82f6;
 font-weight:bold;
 }
 
+/* GALLERY */
+
+.gallery{
+padding:70px 20px;
+text-align:center;
+}
+
+.gallery h2{
+color:#3b82f6;
+margin-bottom:40px;
+}
+
+.gallery-grid{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.gallery img{
+width:320px;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+border:1px solid #1e293b;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.04);
+}
+
 /* CONTACT */
 
 .contact{
 text-align:center;
-margin:100px 0;
+padding:80px 20px;
+background:#020617;
+border-top:1px solid #1e293b;
 }
 
 .contact h2{
@@ -179,19 +188,6 @@ color:#94a3b8;
 border-top:1px solid #1e293b;
 }
 
-/* ANIMATION */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
 /* MOBILE */
 
 @media(max-width:900px){
@@ -201,6 +197,10 @@ flex-direction:column;
 height:auto;
 padding:20px;
 gap:15px;
+}
+
+.logo{
+height:100px;
 }
 
 .hero{
@@ -234,21 +234,23 @@ max-width:420px;
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
 <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
 
 <div class="hero-text">
 
-<h1>Професійні автозапчастини у Звягелі</h1>
+<h1>Магазин «ГАРАЖ» — професійний підхід до вашого авто</h1>
 
 <p>
-Підбір деталей для будь-яких автомобілів.  
-Швидке замовлення, консультація та великий асортимент.
+Якісні автозапчастини, мастила, фільтри та аксесуари.  
+Швидкий підбір деталей для будь-якого автомобіля.
 </p>
 
 <a href="tel:+380961606289" class="button">
-Підібрати запчастину
+Швидка консультація
 </a>
 
 </div>
@@ -256,30 +258,38 @@ max-width:420px;
 </section>
 
 
-<section class="brands">
+<!-- SERVICES -->
 
-<h2>Популярні бренди</h2>
+<section class="services">
 
-<div class="brand-grid">
+<h2>Повний спектр автотоварів</h2>
 
-<div class="brand">BOSCH</div>
-<div class="brand">MANN</div>
-<div class="brand">LIQUI MOLY</div>
-<div class="brand">MAHLE</div>
-<div class="brand">NGK</div>
+<p>
+Ми пропонуємо <span class="highlight">аксесуари, мастила та фільтри</span> від провідних брендів.
+Наші фахівці здійснюють точний підбір запчастин та швидке замовлення деталей.
+</p>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+<h2>Наш магазин</h2>
+
+<div class="gallery-grid">
+
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
 
 </div>
 
 </section>
 
 
-<section class="info">
-
-Магазин <span class="highlight">ГАРАЖ</span> пропонує повний спектр автотоварів  
-та професійний підбір запчастин для автомобілів усіх марок.
-
-</section>
-
+<!-- CONTACT -->
 
 <section class="contact">
 
@@ -290,6 +300,10 @@ max-width:420px;
 <p style="font-size:24px;color:#3b82f6;">
 📞 0 (96) 160 62 89
 </p>
+
+<a class="button" href="tel:+380961606289">
+Подзвонити
+</a>
 
 </section>
 
