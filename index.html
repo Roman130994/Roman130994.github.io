@@ -13,42 +13,46 @@ body {
     color: white;
 }
 
-/* Оновлена шапка */
 header {
     background: #020617;
-    padding: 15px 50px;
+    padding: 15px 30px;
     display: flex;
-    justify-content: space-between; /* Лого зліва, меню справа */
-    align-items: center; /* На одному рівні по вертикалі */
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #1e293b;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    position: absolute; /* Логотип фіксовано зліва */
+    left: 30px;
 }
 
 .logo {
-    width: 120px; /* Трохи зменшив для акуратності в рядку */
-    /* Прибирає білий фон, якщо він є на картинці */
-    mix-blend-mode: lighten; 
+    width: 60px; /* Компактний розмір */
+    mix-blend-mode: lighten; /* Прибирає білий фон */
 }
 
 header h1 {
-    margin-left: 15px;
-    font-size: 28px;
-    color: white;
+    margin-left: 10px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Меню справа від лого */
+/* Меню по центру */
 nav {
+    margin: 0 auto; 
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
+    font-weight: 500;
     transition: 0.3s;
 }
 
@@ -56,25 +60,50 @@ nav a:hover {
     color: #2563eb;
 }
 
-.hero {
-    padding: 40px;
-    text-align: center;
+/* Нова секція Hero: фото + текст поруч */
+.intro-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
-.hero img {
-    width: 90%;
-    max-width: 700px;
+.intro-image {
+    width: 45%;
+    max-width: 450px;
     border-radius: 12px;
-    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.intro-content {
+    width: 55%;
+    text-align: left;
+}
+
+.intro-content h2 {
+    font-size: 32px;
+    margin-top: 0;
+    color: #3b82f6;
+}
+
+.intro-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cbd5e1;
 }
 
 .gallery {
-    padding: 40px;
+    padding: 60px 20px;
     text-align: center;
+    background: #020617;
 }
 
 .gallery img {
     width: 300px;
+    height: 200px;
+    object-fit: cover;
     margin: 10px;
     border-radius: 10px;
     transition: 0.3s;
@@ -84,23 +113,25 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
 .button {
     background: #2563eb;
-    padding: 15px 30px;
+    padding: 12px 25px;
     color: white;
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    margin: 10px;
     border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .button:hover {
     background: #1d4ed8;
-}
-
-.contact-buttons a {
-    display: inline-block;
-    margin: 10px;
 }
 
 footer {
@@ -108,26 +139,28 @@ footer {
     padding: 30px;
     text-align: center;
     color: #94a3b8;
-    margin-top: 40px;
-    border-top: 1px solid #1e293b;
+    font-size: 14px;
 }
 
-.contact-text {
-    max-width: 800px;
-    margin: 20px auto;
-    line-height: 1.7;
-    color: #cbd5e1;
-    font-size: 17px;
-}
-
-/* Адаптивність для мобільних */
-@media (max-width: 768px) {
+/* Адаптивність */
+@media (max-width: 850px) {
     header {
         flex-direction: column;
-        padding: 20px;
+        padding-bottom: 20px;
     }
-    nav {
-        margin-top: 20px;
+    .logo-container {
+        position: static;
+        margin-bottom: 15px;
+    }
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro-image, .intro-content {
+        width: 100%;
+    }
+    .intro-content {
+        text-align: center;
     }
 }
 </style>
@@ -137,49 +170,47 @@ footer {
 
 <header>
     <div class="logo-container">
-        <img src="https://cdn.phototourl.com/uploads/2026-02-22-d86089ee-d897-4d00-9d9c-477235d0803d.png" class="logo" alt="Логотип">
+        <img src="https://cdn.phototourl.com/uploads/2026-02-22-ec48f7a2-fe57-48fd-9d3c-922ec594af77.png" class="logo" alt="Logo">
         <h1>ГАРАЖ</h1>
     </div>
     
     <nav>
         <a href="#home">Головна</a>
-        <a href="#gallery">Фото</a>
+        <a href="#gallery">Фото магазину</a>
         <a href="#contact">Контакти</a>
     </nav>
 </header>
 
-<section class="hero" id="home">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
-    <h2>Автозапчастини для всіх автомобілів</h2>
-    <p>В нашому магазині представлений величезний асортимент автозапчастин: від двигунів і гальмівних систем до аксесуарів та деталей під замовлення. Ми допоможемо знайти будь-яку запчастину для вашого автомобіля.</p>
+<section class="intro-section" id="home">
+    <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg" class="intro-image" alt="Магазин">
+    <div class="intro-content">
+        <h2>Вітаємо в «ГАРАЖІ»</h2>
+        <p>Наш магазин у Звягелі пропонує професійний підбір автозапчастин для будь-яких марок. Ми поєднуємо величезний асортимент у наявності з можливістю швидкого замовлення ексклюзивних деталей.</p>
+        <p>Якість, надійність та індивідуальний підхід до кожного авто — це те, за що нас обирають клієнти вже багато років.</p>
+        <a class="button" href="tel:+380961606289">Зателефонувати нам</a>
+    </div>
 </section>
 
 <section class="gallery" id="gallery">
-    <h2>Фото магазину</h2>
+    <h2>Наш асортимент</h2>
     <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
     <img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
     <img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
 </section>
 
-<section class="hero" id="contact">
-    <h2>Контакти</h2>
+<section class="contact-section" id="contact">
+    <h2>Зв'яжіться з нами</h2>
     <p>📍 м. Звягель, вул. Юрія Глухова 23</p>
-    <p>📞 Телефон: 0 (96) 160 62 89</p>
+    <p>📞 0 (96) 160 62 89</p>
 
     <div class="contact-buttons">
-        <a class="button" href="tel:+380961606289">Подзвонити</a>
-        <a class="button" href="https://t.me/+380961606289" target="_blank">Telegram</a>
-        <a class="button" href="viber://chat?number=%2B380961606289" target="_blank">Viber</a>
-    </div>
-
-    <div class="contact-text">
-        <p>У нашому магазині "ГАРАЖ" ви знайдете широкий вибір автозапчастин для будь-яких марок та моделей автомобілів. Якщо потрібної деталі немає в наявності, ми можемо замовити її у короткі терміни.</p>
+        <a class="button" href="https://t.me/+380961606289" target="_blank">Написати в Telegram</a>
+        <a class="button" href="viber://chat?number=%2B380961606289" target="_blank">Написати в Viber</a>
     </div>
 </section>
 
 <footer>
-    <p>м. Звягель, вул. Юрія Глухова 23 | Тел: 0 (96) 160 62 89</p>
-    <p>© 2026 Магазин автозапчастин "ГАРАЖ"</p>
+    © 2026 Магазин автозапчастин "ГАРАЖ" | м. Звягель, вул. Юрія Глухова 23
 </footer>
 
 </body>
