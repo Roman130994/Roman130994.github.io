@@ -16,14 +16,14 @@ body {
 
 header {
     background: #020617;
-    padding: 15px 30px;
+    padding: 10px 30px;
     display: flex;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #1e293b;
-    height: 70px;
+    min-height: 70px;
 }
 
 .logo-container {
@@ -31,28 +31,31 @@ header {
     align-items: center;
     text-decoration: none;
     color: white;
-    position: absolute;
-    left: 30px;
+    min-width: 200px;
 }
 
 .logo {
-    width: 50px;
+    width: 60px; /* Оптимальний розмір */
     height: auto;
-    mix-blend-mode: screen; 
-    filter: brightness(1.1);
+    display: block;
+    /* Фільтри для кращого вигляду на темному фоні */
+    mix-blend-mode: screen;
+    filter: brightness(1.1) contrast(1.1);
 }
 
 header h1 {
     margin-left: 12px;
-    font-size: 20px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 800;
+    font-weight: 900;
+    color: #ffffff;
 }
 
 nav {
-    margin: 0 auto; 
+    flex-grow: 1;
     display: flex;
+    justify-content: center;
     gap: 30px;
 }
 
@@ -180,9 +183,9 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Спеціальна кнопка Замовити дзвінок */
+/* Анімована кнопка */
 .call-action {
-    background: #10b981; /* Зелений колір для замовлення */
+    background: #10b981;
     animation: pulse 2s infinite;
 }
 
@@ -201,8 +204,9 @@ footer {
 }
 
 @media (max-width: 900px) {
-    header { height: auto; flex-direction: column; padding: 20px; }
-    .logo-container { position: static; margin-bottom: 15px; }
+    header { height: auto; flex-direction: column; padding: 20px; text-align: center;}
+    .logo-container { margin-bottom: 15px; min-width: auto; }
+    nav { gap: 15px; margin-bottom: 10px; }
     .intro-section { flex-direction: column; text-align: center; }
     .intro-image, .intro-content { width: 100%; }
 }
@@ -212,7 +216,10 @@ footer {
 
 <header>
     <a href="#home" class="logo-container">
-        <img src="https://cdn.phototourl.com/uploads/2026-02-22-ec48f7a2-fe57-48fd-9d3c-922ec594af77.png" class="logo" alt="Logo">
+        <img src="https://cdn.phototourl.com/uploads/2026-02-22-ec48f7a2-fe57-48fd-9d3c-922ec594af77.png" 
+             class="logo" 
+             alt="Лого"
+             onerror="this.style.display='none'"> 
         <h1>ГАРАЖ</h1>
     </a>
     <nav>
