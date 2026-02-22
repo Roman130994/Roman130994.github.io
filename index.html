@@ -8,52 +8,43 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background: #0f172a;
     color: white;
     scroll-behavior: smooth;
 }
 
-/* ШАПКА ТА ЛОГОТИП */
+/* ШАПКА */
 header {
     background: #020617;
-    padding: 10px 40px;
+    padding: 15px 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Лого зліва, меню в центрі (візуально) */
+    justify-content: space-between; /* Лого зліва, меню в центрі, пустий блок справа для балансу */
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #1e293b;
-    height: 80px;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.logo-img {
-    height: 65px; /* Збільшив висоту для кращої видимості */
-    width: auto;
+/* ЛОГОТИП */
+.logo {
+    width: 80px; /* Розмір як ви хотіли */
+    height: auto;
     display: block;
-    /* Фільтр для прибирання чорного/білого фону, якщо він є */
-    mix-blend-mode: screen; 
 }
 
+/* МЕНЮ ПО ЦЕНТРУ */
 nav {
     display: flex;
-    gap: 30px;
-    margin-right: auto; /* Зміщує меню ближче до центру */
-    margin-left: 50px;
+    gap: 25px;
 }
 
 nav a {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: bold;
     text-transform: uppercase;
     transition: 0.3s;
 }
@@ -62,96 +53,90 @@ nav a:hover {
     color: #3b82f6;
 }
 
-/* HERO SECTION */
+/* Порожній блок для того, щоб меню залишалося рівно по центру */
+.header-spacer {
+    width: 80px;
+}
+
+/* ПЕРШИЙ БЛОК: ФОТО + ТЕКСТ */
 .intro-section {
     max-width: 1100px;
-    margin: 60px auto;
+    margin: 50px auto;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 .intro-image {
-    width: 45%;
-    max-width: 450px;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    border: 1px solid #334155;
+    width: 40%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .intro-content {
-    width: 55%;
+    width: 60%;
+    text-align: left;
 }
 
 .intro-content h2 {
-    font-size: 36px;
-    margin-top: 0;
+    font-size: 32px;
     color: #3b82f6;
+    margin-top: 0;
 }
 
-/* ПОСЛУГИ */
-.services-highlight {
-    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-    padding: 80px 20px;
+/* ПРОФЕСІЙНИЙ БЛОК З ТЕКСТОМ */
+.pro-text-block {
+    background: #1e293b;
+    padding: 60px 20px;
     text-align: center;
     border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155;
 }
 
-.services-container {
+.pro-text-block div {
     max-width: 900px;
     margin: 0 auto;
-}
-
-.services-text {
     font-size: 20px;
     line-height: 1.8;
+    color: #e2e8f0;
 }
 
-.highlight-blue {
-    color: #60a5fa;
-    font-weight: 600;
-    border-bottom: 2px solid #2563eb;
+.highlight {
+    color: #3b82f6;
+    font-weight: bold;
 }
 
 /* ГАЛЕРЕЯ */
 .gallery {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
-    background: #020617;
-}
-
-.gallery-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 .gallery img {
-    width: 320px;
-    height: 220px;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid #1e293b;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #334155;
 }
 
-/* КНОПКИ ТА КОНТАКТИ */
+/* КОНТАКТИ */
 .contact-section {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
 .button {
     background: #2563eb;
-    padding: 14px 28px;
+    padding: 15px 30px;
     color: white;
     text-decoration: none;
     display: inline-block;
-    margin: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: bold;
-    text-transform: uppercase;
+    margin: 10px;
     transition: 0.3s;
 }
 
@@ -166,25 +151,18 @@ nav a:hover {
     100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-/* ФУТЕР - ЦЕНТРОВАНИЙ */
+/* ФУТЕР ЦЕНТРОВАНИЙ */
 footer {
     background: #020617;
     padding: 40px 20px;
-    text-align: center; /* Центрування тексту */
-    color: #64748b;
+    text-align: center;
+    color: #94a3b8;
     border-top: 1px solid #1e293b;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-footer p {
-    margin: 5px 0;
-    display: block;
-}
-
-@media (max-width: 900px) {
-    header { height: auto; flex-direction: column; padding: 20px; gap: 15px; }
-    nav { margin: 0; gap: 15px; }
+@media (max-width: 850px) {
+    header { flex-direction: column; height: auto; padding: 20px; }
+    .header-spacer { display: none; }
     .intro-section { flex-direction: column; text-align: center; }
     .intro-image, .intro-content { width: 100%; }
 }
@@ -193,62 +171,55 @@ footer p {
 <body>
 
 <header>
-    <a href="#home" class="logo-container">
-        <img src="https://cdn.phototourl.com/uploads/2026-02-22-ec48f7a2-fe57-48fd-9d3c-922ec594af77.png" 
-             class="logo-img" 
-             alt="Магазин Гараж Логотип">
-    </a>
+    <img src="https://cdn.phototourl.com/uploads/2026-02-22-ec48f7a2-fe57-48fd-9d3c-922ec594af77.png" class="logo" alt="Лого Гараж">
+    
     <nav>
         <a href="#home">Головна</a>
-        <a href="#services">Про нас</a>
-        <a href="#gallery">Товари</a>
+        <a href="#services">Послуги</a>
+        <a href="#gallery">Фото</a>
         <a href="#contact">Контакти</a>
     </nav>
+
+    <div class="header-spacer"></div>
 </header>
 
 <section class="intro-section" id="home">
     <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg" class="intro-image">
     <div class="intro-content">
-        <h2>Професійний підбір запчастин у Звягелі</h2>
-        <p>Магазин «ГАРАЖ» — це гарантія якості та сумісності кожної деталі. Професійний сервіс та індивідуальний підхід до вашого авто.</p>
-        <a class="button call-action" href="tel:+380961606289">Замовити консультацію</a>
+        <h2>Магазин «ГАРАЖ» — професійний підхід до вашого авто</h2>
+        <p>Ми забезпечуємо автовласників міста Звягель якісними запчастинами та професійною консультацією. Ваше авто заслуговує на найкраще обслуговування.</p>
+        <a class="button call-action" href="tel:+380961606289">Швидка консультація</a>
     </div>
 </section>
 
-<section class="services-highlight" id="services">
-    <div class="services-container">
-        <h3>Асортимент та індивідуальні рішення</h3>
-        <div class="services-text">
-            У нас ви знайдете повний спектр <span class="highlight-blue">мастил, фільтрів та автохімії</span>. 
-            <br><br>
-            Ми також спеціалізуємося на <span class="highlight-blue">доставці запчастин під замовлення</span> для будь-яких іномарок. Швидко, надійно, точно за вашим VIN-кодом.
-        </div>
+<section class="pro-text-block" id="services">
+    <div>
+        <h3>Повний спектр автотоварів</h3>
+        Ми пропонуємо вражаючий асортимент <span class="highlight">аксесуарів, мастил та фільтрів</span> від провідних світових брендів. 
+        Наші фахівці здійснюють точний підбір запчастин, а завдяки налагодженій логістиці ми можемо <span class="highlight">замовити будь-які деталі</span> для автомобілів усіх марок у найкоротші терміни.
     </div>
 </section>
 
 <section class="gallery" id="gallery">
-    <h2>Товари у наявності</h2>
-    <div class="gallery-grid">
-        <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
-        <img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
-        <img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
-    </div>
+    <h2>Наш магазин</h2>
+    <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
+    <img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
+    <img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
 </section>
 
 <section class="contact-section" id="contact">
-    <h2>Контакти</h2>
+    <h2>Зв'яжіться з нами</h2>
     <p>📍 м. Звягель, вул. Юрія Глухова 23</p>
-    <p style="font-size: 24px; color: #3b82f6; margin: 20px 0;">📞 0 (96) 160 62 89</p>
-
-    <div class="contact-buttons">
+    <p style="font-size: 24px; color: #3b82f6;">📞 0 (96) 160 62 89</p>
+    <div style="margin-top: 20px;">
         <a class="button" href="https://t.me/+380961606289" target="_blank" style="background: #0088cc;">Telegram</a>
         <a class="button" href="viber://chat?number=%2B380961606289" target="_blank" style="background: #7360f2;">Viber</a>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Магазин запчастин "ГАРАЖ"</p>
-    <p>м. Звягель, вул. Юрія Глухова 23 | тел: 096 160 62 89</p>
+    <p>© 2026 Магазин автозапчастин "ГАРАЖ"</p>
+    <p>м. Звягель, вул. Юрія Глухова 23 | тел: 0 (96) 160 62 89</p>
 </footer>
 
 </body>
