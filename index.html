@@ -26,30 +26,31 @@ header {
     min-height: 70px;
 }
 
+/* Контейнер логотипу */
 .logo-container {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: white;
-    min-width: 200px;
 }
 
-.logo {
-    width: 60px; /* Оптимальний розмір */
-    height: auto;
+.logo-img {
+    height: 50px; /* Висота логотипу */
+    width: auto;
     display: block;
-    /* Фільтри для кращого вигляду на темному фоні */
-    mix-blend-mode: screen;
-    filter: brightness(1.1) contrast(1.1);
+    margin-right: 10px;
+    /* Якщо фон лого білий, цей режим спробує його прибрати */
+    mix-blend-mode: screen; 
 }
 
-header h1 {
-    margin-left: 12px;
-    font-size: 22px;
+.logo-text {
+    font-size: 24px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-weight: 900;
-    color: #ffffff;
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 nav {
@@ -72,7 +73,7 @@ nav a:hover {
     color: #3b82f6;
 }
 
-/* Секція Hero */
+/* Hero Section */
 .intro-section {
     max-width: 1100px;
     margin: 60px auto;
@@ -106,7 +107,7 @@ nav a:hover {
     color: #cbd5e1;
 }
 
-/* Блок Професійного тексту */
+/* Послуги */
 .services-highlight {
     background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
     padding: 80px 20px;
@@ -151,20 +152,9 @@ nav a:hover {
     object-fit: cover;
     border-radius: 12px;
     border: 1px solid #1e293b;
-    transition: 0.4s;
 }
 
-.gallery img:hover {
-    transform: translateY(-5px);
-    border-color: #3b82f6;
-}
-
-/* Контакти */
-.contact-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
+/* Кнопки */
 .button {
     background: #2563eb;
     padding: 14px 28px;
@@ -178,12 +168,6 @@ nav a:hover {
     transition: 0.3s;
 }
 
-.button:hover {
-    background: #1d4ed8;
-    transform: scale(1.05);
-}
-
-/* Анімована кнопка */
 .call-action {
     background: #10b981;
     animation: pulse 2s infinite;
@@ -204,8 +188,8 @@ footer {
 }
 
 @media (max-width: 900px) {
-    header { height: auto; flex-direction: column; padding: 20px; text-align: center;}
-    .logo-container { margin-bottom: 15px; min-width: auto; }
+    header { height: auto; flex-direction: column; padding: 20px; text-align: center; }
+    .logo-container { margin-bottom: 15px; }
     nav { gap: 15px; margin-bottom: 10px; }
     .intro-section { flex-direction: column; text-align: center; }
     .intro-image, .intro-content { width: 100%; }
@@ -216,11 +200,8 @@ footer {
 
 <header>
     <a href="#home" class="logo-container">
-        <img src="https://cdn.phototourl.com/uploads/2026-02-22-ec48f7a2-fe57-48fd-9d3c-922ec594af77.png" 
-             class="logo" 
-             alt="Лого"
-             onerror="this.style.display='none'"> 
-        <h1>ГАРАЖ</h1>
+        <img src="logo.png" class="logo-img" alt="" onerror="this.style.display='none'">
+        <span class="logo-text">ГАРАЖ</span>
     </a>
     <nav>
         <a href="#home">Головна</a>
@@ -234,7 +215,7 @@ footer {
     <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg" class="intro-image">
     <div class="intro-content">
         <h2>Експертний підбір запчастин у Звягелі</h2>
-        <p>Магазин «ГАРАЖ» — це гарантія якості та сумісності кожної деталі. Ми допомагаємо вашому авто залишатися у ідеальній формі, пропонуючи перевірені бренди та професійний сервіс.</p>
+        <p>Магазин «ГАРАЖ» — це гарантія якості та сумісності кожної деталі. Професійний сервіс для вашого автомобіля.</p>
         <a class="button call-action" href="tel:+380961606289">Замовити консультацію</a>
     </div>
 </section>
@@ -243,9 +224,9 @@ footer {
     <div class="services-container">
         <h3>Асортимент та індивідуальні рішення</h3>
         <div class="services-text">
-            У нас ви знайдете повний спектр <span class="highlight-blue">мастил, фільтрів та автохімії</span> для регулярного ТО. 
+            У нас ви знайдете повний спектр <span class="highlight-blue">мастил, фільтрів та автохімії</span>. 
             <br><br>
-            Ми також спеціалізуємося на <span class="highlight-blue">доставці запчастин під замовлення</span> для будь-яких іномарок. Наші фахівці оперативно знайдуть навіть дефіцитні вузли та агрегати, забезпечивши найкоротші терміни очікування.
+            Ми також спеціалізуємося на <span class="highlight-blue">доставці запчастин під замовлення</span> для будь-яких іномарок. Швидко, надійно, точно.
         </div>
     </div>
 </section>
@@ -271,8 +252,7 @@ footer {
 </section>
 
 <footer>
-    <p>Магазин автозапчастин "ГАРАЖ" | м. Звягель, вул. Юрія Глухова 23</p>
-    <p>© 2026 Надійність у кожній деталі</p>
+    <p>© 2026 Магазин "ГАРАЖ" | м. Звягель, вул. Юрія Глухова 23</p>
 </footer>
 
 </body>
