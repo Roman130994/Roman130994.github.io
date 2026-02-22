@@ -17,7 +17,8 @@ body{
 /* HEADER */
 header{
     background:#020617;
-    padding:15px 30px;
+    padding:10px 30px;
+    height:90px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -27,10 +28,10 @@ header{
     border-bottom:1px solid #1e293b;
 }
 
-/* LOGO (ЗБІЛЬШЕНИЙ) */
+/* LOGO (пропорційний) */
 .logo{
-    width:160px;
-    height:160px;
+    height:70px;
+    width:auto;
     object-fit:contain;
     display:block;
 }
@@ -54,9 +55,9 @@ nav a:hover{
     color:#3b82f6;
 }
 
-/* spacer (під розмір логотипу) */
+/* spacer */
 .header-spacer{
-    width:160px;
+    width:120px;
 }
 
 /* INTRO */
@@ -169,13 +170,13 @@ footer{
 
 header{
     flex-direction:column;
-    gap:15px;
+    height:auto;
+    gap:10px;
+    padding:15px;
 }
 
-/* менший логотип на телефоні */
 .logo{
-    width:110px;
-    height:110px;
+    height:60px;
 }
 
 .header-spacer{
