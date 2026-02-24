@@ -15,129 +15,176 @@
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#f5f5f5;
-}
-
-/* HEADER */
-
-header{
-background:#111;
+font-family:Arial,sans-serif;
+background:#0b1220;
 color:white;
-padding:15px 0;
 }
 
 .container{
 max-width:1200px;
 margin:auto;
-padding:0 20px;
+padding:20px;
+}
+
+/* HEADER */
+
+header{
+background:#020617;
+border-bottom:1px solid #1e293b;
 }
 
 .header-inner{
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 flex-wrap:wrap;
-gap:15px;
 }
 
 .logo{
-font-size:26px;
-font-weight:bold;
-color:#ff3b3b;
-text-decoration:none;
+height:80px;
 }
 
-.contact-buttons{
+/* MENU */
+
+nav{
 display:flex;
-gap:10px;
-flex-wrap:wrap;
+gap:25px;
 }
 
-.contact-btn{
-padding:10px 16px;
-border-radius:8px;
-color:white;
+nav a{
+color:#cbd5e1;
 text-decoration:none;
+font-weight:600;
 }
 
-.telegram{background:#229ED9;}
-.viber{background:#7360F2;}
-.phone{background:#27ae60;}
+nav a:hover{
+color:#3b82f6;
+}
 
 /* HERO */
 
 .hero{
-background:linear-gradient(135deg,#1a1a1a,#333);
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:40px;
+padding:40px 0;
+}
+
+.hero img{
+width:100%;
+max-width:450px;
+border-radius:12px;
+}
+
+.hero-text{
+flex:1;
+min-width:300px;
+}
+
+.hero-text h1{
+color:#3b82f6;
+}
+
+/* BUTTON */
+
+.button{
+display:inline-block;
+padding:14px 25px;
+margin:5px;
+border-radius:8px;
 color:white;
-padding:80px 20px;
+text-decoration:none;
+border:none;
+cursor:pointer;
+font-size:16px;
 }
 
-.hero h1{
-font-size:40px;
-margin-bottom:10px;
+.call{background:#10b981;}
+.telegram{background:#0088cc;}
+.viber{background:#7360f2;}
+
+.button:hover{
+opacity:0.85;
 }
 
-.hero p{
-color:#ccc;
-margin-bottom:20px;
+/* SERVICES */
+
+.services{
+background:#020617;
+padding:40px 20px;
+margin-top:40px;
+}
+
+.services p{
+line-height:1.7;
+font-size:18px;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:40px 0;
+}
+
+.gallery-grid{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+max-width:350px;
+border-radius:10px;
+}
+
+/* CONTACT */
+
+.contact{
+background:#020617;
+padding:40px 20px;
+margin-top:40px;
 }
 
 /* FORM */
 
-.form-section{
-background:white;
-padding:40px 20px;
-}
-
-.form-box{
+form{
 max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
 }
 
-input,textarea{
-width:100%;
+input, textarea{
 padding:12px;
-margin-bottom:10px;
 border-radius:6px;
-border:1px solid #ccc;
-font-size:16px;
-}
-
-button{
-background:#229ED9;
-color:white;
 border:none;
-padding:14px;
-border-radius:8px;
 font-size:16px;
-cursor:pointer;
-width:100%;
 }
 
-button:hover{
-background:#1b8ac2;
+.success{
+color:#10b981;
+display:none;
+text-align:center;
+margin-top:10px;
 }
 
 /* MAP */
 
 .map{
-padding:40px 20px;
+margin-top:30px;
 }
 
-.map iframe{
-width:100%;
-max-width:100%;
-border-radius:10px;
-}
+/* FOOTER */
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:28px;
-}
-
+footer{
+background:#020617;
+padding:20px;
+text-align:center;
+margin-top:40px;
+color:#94a3b8;
 }
 
 </style>
@@ -149,80 +196,118 @@ font-size:28px;
 <header>
 <div class="container header-inner">
 
-<a href="#" class="logo">
-ГАРАЖ
-</a>
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-2cd0fc60-3689-4353-82cd-18bd68b3ecaf.png" class="logo">
 
-<div class="contact-buttons">
-
-<a href="https://t.me/rmnkbtkn" class="contact-btn telegram">
-<i class="fab fa-telegram"></i> Telegram
-</a>
-
-<a href="viber://chat?number=%2B380961606289" class="contact-btn viber">
-<i class="fab fa-viber"></i> Viber
-</a>
-
-<a href="tel:+380961606289" class="contact-btn phone">
-<i class="fas fa-phone"></i> Подзвонити
-</a>
-
-</div>
+<nav>
+<a href="#">Головна</a>
+<a href="#services">Послуги</a>
+<a href="#gallery">Фото</a>
+<a href="#contact">Контакти</a>
+</nav>
 
 </div>
 </header>
 
 
-<section class="hero">
+<section class="container hero">
 
-<div class="container">
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
 
-<h1>Автозапчастини в наявності</h1>
+<div class="hero-text">
 
-<p>Залиш заявку і ми відповімо в Telegram</p>
+<h1>Автозапчастини для будь-якого автомобіля</h1>
+
+<p>
+Магазин «ГАРАЖ» пропонує великий асортимент автозапчастин, мастил, фільтрів та аксесуарів.  
+Ми підберемо деталі для будь-якого авто швидко та професійно.
+</p>
+
+<a href="tel:+380961606289" class="button call">
+<i class="fa fa-phone"></i> Подзвонити
+</a>
+
+<a href="https://t.me/+380961606289" class="button telegram">
+<i class="fab fa-telegram"></i> Telegram
+</a>
+
+<a href="viber://chat?number=%2B380961606289" class="button viber">
+<i class="fab fa-viber"></i> Viber
+</a>
 
 </div>
 
 </section>
 
 
-<section class="form-section">
+<section id="services" class="services">
 
 <div class="container">
 
-<div class="form-box">
+<h2>Наш асортимент</h2>
 
-<h2>Залишити заявку</h2>
+<p>
 
-<form onsubmit="sendToTelegram(); return false;">
+У нашому магазині ви знайдете великий вибір автозапчастин для іномарок та вітчизняних автомобілів.
+Ми пропонуємо деталі двигуна, ходової частини, гальмівної системи, електрики та інших вузлів автомобіля.
+
+Також в наявності мастила, антифризи, фільтри, автохімія та всі необхідні аксесуари для вашого авто.
+
+Якщо потрібної деталі немає в наявності — ми швидко замовимо її для вас.
+
+</p>
+
+</div>
+
+</section>
+
+
+<section id="gallery" class="gallery container">
+
+<h2>Фото магазину</h2>
+
+<div class="gallery-grid">
+
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
+
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
+
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
+
+</div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2>Заявка на запчастини</h2>
+
+<form id="form">
 
 <input type="text" id="name" placeholder="Ваше ім'я" required>
 
-<input type="text" id="phone" placeholder="Телефон" required>
+<input type="tel" id="phone" placeholder="Телефон" required>
 
 <textarea id="message" placeholder="Яка запчастина потрібна"></textarea>
 
-<button type="submit">
+<button class="button call" type="submit">
 Відправити заявку
 </button>
 
+<div class="success" id="success">
+Заявку відправлено!
+</div>
+
 </form>
 
-</div>
 
-</div>
-
-</section>
-
-
-<section class="map">
-
-<div class="container">
-
-<h2>Ми на карті</h2>
+<div class="map">
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483.7445778346207!2d27.603205915426717!3d50.58713935698085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472eb1005d641f09%3A0xbfd5d9dbb084121a!2z0JDQstGC0L4g0LfQsNC_0YfQsNGB0YLQuNC90LggwqvQk9Cw0YDQsNC2wrs!5e0!3m2!1suk!2sua!4v1771926448439!5m2!1suk!2sua"
-height="450"
+width="100%"
+height="400"
 style="border:0;"
 allowfullscreen=""
 loading="lazy">
@@ -230,27 +315,41 @@ loading="lazy">
 
 </div>
 
+</div>
+
 </section>
+
+
+<footer>
+
+© 2026 Магазин автозапчастин "ГАРАЖ"
+
+</footer>
 
 
 <script>
 
-function sendToTelegram(){
+document.getElementById("form").addEventListener("submit", function(e){
+
+e.preventDefault();
 
 let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
 let message=document.getElementById("message").value;
 
-let text="Нова заявка:%0A"
-+"Ім'я: "+name+"%0A"
-+"Телефон: "+phone+"%0A"
-+"Запчастина: "+message;
+let text=
+"🔧 Нова заявка з сайту ГАРАЖ%0A%0A"+
+"👤 Ім'я: "+name+"%0A"+
+"📞 Телефон: "+phone+"%0A"+
+"📦 Запчастина: "+message;
 
-let url="https://t.me/rmnkbtkn?text="+text;
+fetch("https://api.telegram.org/bot8593764923:AAEe6eDBCeXR5wn6USyP0QcE922BWvra5cw/sendMessage?chat_id=1864685581&text="+text);
 
-window.open(url,"_blank");
+document.getElementById("success").style.display="block";
 
-}
+document.getElementById("form").reset();
+
+});
 
 </script>
 
