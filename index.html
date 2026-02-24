@@ -15,7 +15,7 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#0b1220;
 color:white;
 }
@@ -31,28 +31,31 @@ padding:20px;
 header{
 background:#020617;
 border-bottom:1px solid #1e293b;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .header-inner{
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
 }
 
 .logo{
-height:75px;
+height:110px;
 }
 
 nav{
 display:flex;
-gap:25px;
+gap:30px;
 }
 
 nav a{
 color:#cbd5e1;
 text-decoration:none;
-font-weight:600;
+font-size:18px;
+font-weight:bold;
 }
 
 nav a:hover{
@@ -63,15 +66,15 @@ color:#3b82f6;
 
 .hero{
 display:flex;
-gap:40px;
 align-items:center;
+gap:60px;
+padding:60px 20px;
 flex-wrap:wrap;
-padding:40px 0;
 }
 
 .hero img{
-width:100%;
-max-width:450px;
+width:450px;
+max-width:100%;
 border-radius:12px;
 }
 
@@ -81,27 +84,77 @@ min-width:300px;
 }
 
 .hero-text h1{
+font-size:36px;
 color:#3b82f6;
 }
 
-/* SERVICES */
-
-.services{
-background:#020617;
-padding:50px 20px;
-margin-top:30px;
-line-height:1.7;
+.hero-text p{
+font-size:18px;
+color:#cbd5e1;
+line-height:1.6;
 }
 
-/* CONTACT BLOCK */
+/* BUTTON */
 
-.contact-section{
+.button{
+display:inline-block;
+padding:14px 28px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+margin:5px;
+}
+
+.tel{background:#10b981;}
+.tg{background:#0088cc;}
+.vb{background:#7360f2;}
+
+.button:hover{
+opacity:0.85;
+}
+
+/* ABOUT */
+
+.about{
+background:#020617;
+padding:60px 20px;
+}
+
+.about p{
+font-size:18px;
+line-height:1.7;
+color:#cbd5e1;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:60px 20px;
+}
+
+.gallery-grid{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.gallery-grid img{
+width:350px;
+max-width:100%;
+border-radius:10px;
+}
+
+/* CONTACT */
+
+.contact{
+background:#020617;
 padding:60px 20px;
 }
 
 .contact-grid{
 display:flex;
-gap:50px;
+gap:60px;
 flex-wrap:wrap;
 }
 
@@ -110,73 +163,39 @@ flex:1;
 min-width:300px;
 }
 
-.contact-info h3{
-color:#3b82f6;
-}
-
 .contact-info p{
-margin:8px 0;
+font-size:18px;
+margin:10px 0;
 color:#cbd5e1;
 }
-
-.contact-info i{
-width:25px;
-color:#3b82f6;
-}
-
-/* FORM */
 
 .form-box{
 flex:1;
 min-width:300px;
-background:#020617;
+background:#0b1220;
 padding:25px;
 border-radius:10px;
 }
 
-form{
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
 input, textarea{
+width:100%;
 padding:12px;
-border:none;
+margin-top:10px;
 border-radius:6px;
-font-size:16px;
-}
-
-button{
-background:#10b981;
-color:white;
 border:none;
-padding:14px;
-border-radius:8px;
 font-size:16px;
-cursor:pointer;
 }
 
-button:hover{
-background:#059669;
+.submit{
+background:#10b981;
+margin-top:15px;
+cursor:pointer;
 }
 
 .success{
 display:none;
 color:#10b981;
-}
-
-/* SOCIAL */
-
-.social{
-margin-top:15px;
-}
-
-.social a{
-display:inline-block;
-margin-right:10px;
-font-size:22px;
-color:white;
+margin-top:10px;
 }
 
 /* MAP */
@@ -196,10 +215,9 @@ border-radius:10px;
 
 footer{
 background:#020617;
-padding:20px;
+padding:25px;
 text-align:center;
 color:#94a3b8;
-margin-top:30px;
 }
 
 </style>
@@ -208,17 +226,22 @@ margin-top:30px;
 
 <body>
 
+
 <header>
+
 <div class="container header-inner">
 
 <img src="https://cdn.phototourl.com/uploads/2026-02-22-2cd0fc60-3689-4353-82cd-18bd68b3ecaf.png" class="logo">
 
 <nav>
 <a href="#">Головна</a>
+<a href="#about">Про нас</a>
+<a href="#gallery">Фото</a>
 <a href="#contact">Контакти</a>
 </nav>
 
 </div>
+
 </header>
 
 
@@ -228,12 +251,12 @@ margin-top:30px;
 
 <div class="hero-text">
 
-<h1>Автозапчастини для будь-якого автомобіля</h1>
+<h1>Автозапчастини для всіх автомобілів</h1>
 
 <p>
 
-Магазин «ГАРАЖ» пропонує великий асортимент автозапчастин, мастил, фільтрів та аксесуарів.
-Ми підбираємо запчастини для будь-яких авто швидко та професійно.
+Магазин "ГАРАЖ" пропонує великий вибір автозапчастин, аксесуарів, мастил та автохімії.
+Ми підберемо деталі для будь-якого автомобіля швидко та професійно.
 
 </p>
 
@@ -242,74 +265,83 @@ margin-top:30px;
 </section>
 
 
-<section class="services container">
+<section id="about" class="about container">
 
 <h2 style="color:#3b82f6;">Про магазин</h2>
 
 <p>
 
-У нас є великий вибір автозапчастин в наявності та під замовлення.
-Ми можемо замовити запчастини до будь-якого автомобіля — іномарки або вітчизняного.
+У нас великий асортимент запчастин в наявності та під замовлення.
+Ми можемо замовити запчастини до будь-якого автомобіля.
 
 В наявності:
 
-• деталі двигуна  
-• ходова частина  
-• гальмівна система  
-• фільтри  
-• мастила  
-• акумулятори  
-• автоаксесуари  
+— двигун  
+— ходова  
+— фільтри  
+— мастила  
+— акумулятори  
+— аксесуари  
 
-Працюємо швидко та професійно.
+Гарантуємо якість та швидку доставку.
 
 </p>
 
 </section>
 
 
-<section id="contact" class="contact-section container">
+<section id="gallery" class="gallery container">
 
-<div class="contact-grid">
+<h2 style="color:#3b82f6;">Фото магазину</h2>
 
-<!-- LEFT CONTACT INFO -->
+<div class="gallery-grid">
+
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
+
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
+
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
+
+</div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+<div class="container contact-grid">
+
 
 <div class="contact-info">
 
-<h3>Контактна інформація</h3>
+<h2 style="color:#3b82f6;">Контакти</h2>
 
-<p><i class="fa fa-location-dot"></i> м. Звягель, вул. Юрія Глухова 23</p>
+<p>📍 м. Звягель, вул. Юрія Глухова 23</p>
 
-<p><i class="fa fa-phone"></i> +380 (96) 160 62 89</p>
+<p>🕒 Пн-Пт: 9:00 – 18:00</p>
 
-<p><i class="fa fa-clock"></i> Пн-Пт: 9:00 – 18:00</p>
+<p>📞 +380 (96) 160 62 89</p>
 
-<p><i class="fa fa-clock"></i> Сб-Нд: за домовленістю</p>
 
-<div class="social">
-
-<a href="https://t.me/+380961606289">
-<i class="fab fa-telegram"></i>
+<a href="tel:+380961606289" class="button tel">
+Подзвонити
 </a>
 
-<a href="viber://chat?number=%2B380961606289">
-<i class="fab fa-viber"></i>
+<a href="https://t.me/+380961606289" class="button tg">
+Написати в Telegram
 </a>
 
-<a href="tel:+380961606289">
-<i class="fa fa-phone"></i>
+<a href="viber://chat?number=%2B380961606289" class="button vb">
+Написати в Viber
 </a>
+
 
 </div>
 
-</div>
-
-
-<!-- RIGHT FORM -->
 
 <div class="form-box">
 
-<h3>Заявка на запчастини</h3>
+<h2>Заявка на запчастини</h2>
 
 <form id="form">
 
@@ -319,9 +351,7 @@ margin-top:30px;
 
 <textarea id="message" placeholder="Яка запчастина потрібна"></textarea>
 
-<button type="submit">
-Відправити заявку
-</button>
+<input type="submit" value="Відправити заявку" class="button submit">
 
 <div class="success" id="success">
 Заявку відправлено!
@@ -334,10 +364,9 @@ margin-top:30px;
 </div>
 
 
-<div class="map">
+<div class="container map">
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483.7445778346207!2d27.603205915426717!3d50.58713935698085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472eb1005d641f09%3A0xbfd5d9dbb084121a!2z0JDQstGC0L4g0LfQsNC_0YfQsNGB0YLQuNC90LggwqvQk9Cw0YDQsNC2wrs!5e0!3m2!1suk!2sua!4v1771926448439!5m2!1suk!2sua">
-</iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483.7445778346207!2d27.603205915426717!3d50.58713935698085"></iframe>
 
 </div>
 
@@ -361,10 +390,7 @@ let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
 let message=document.getElementById("message").value;
 
-let text="🔧 Нова заявка з сайту%0A%0A"+
-"Ім'я: "+name+"%0A"+
-"Телефон: "+phone+"%0A"+
-"Запчастина: "+message;
+let text="Нова заявка%0AІм'я: "+name+"%0AТелефон: "+phone+"%0AЗапчастина: "+message;
 
 fetch("https://api.telegram.org/bot8593764923:AAEe6eDBCeXR5wn6USyP0QcE922BWvra5cw/sendMessage?chat_id=1864685581&text="+text);
 
