@@ -16,422 +16,244 @@
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#0b1220;
-color:white;
-scroll-behavior:smooth;
+background:#f5f5f5;
 }
 
 /* HEADER */
 
 header{
-background:#020617;
-padding:0 40px;
-height:110px;
+background:#111;
+color:white;
+padding:15px 0;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+.header-inner{
 display:flex;
-align-items:center;
 justify-content:space-between;
-border-bottom:1px solid #1e293b;
-position:sticky;
-top:0;
-z-index:1000;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
 }
 
 .logo{
-height:100px;
-}
-
-nav{
-display:flex;
-gap:30px;
-}
-
-nav a{
-color:#cbd5e1;
+font-size:26px;
+font-weight:bold;
+color:#ff3b3b;
 text-decoration:none;
-font-weight:600;
 }
 
-nav a:hover{
-color:#3b82f6;
+.contact-buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
+
+.contact-btn{
+padding:10px 16px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
+
+.telegram{background:#229ED9;}
+.viber{background:#7360F2;}
+.phone{background:#27ae60;}
 
 /* HERO */
 
 .hero{
-max-width:1200px;
-margin:60px auto;
-padding:20px;
-display:flex;
-gap:50px;
-align-items:center;
-}
-
-.hero img{
-width:400px;
-border-radius:16px;
-}
-
-.hero-text h1{
-color:#3b82f6;
-}
-
-.button{
-display:inline-block;
-margin-top:20px;
-padding:14px 28px;
-border-radius:10px;
+background:linear-gradient(135deg,#1a1a1a,#333);
 color:white;
-text-decoration:none;
-font-weight:bold;
-background:#10b981;
-transition:.3s;
+padding:80px 20px;
 }
 
-.button:hover{
-transform:scale(1.05);
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
 }
 
-.telegram{background:#0088cc;}
-.viber{background:#7360f2;}
-.call{background:#10b981;}
-
-/* SECTIONS */
-
-section{
-padding:70px 20px;
-text-align:center;
+.hero p{
+color:#ccc;
+margin-bottom:20px;
 }
 
-.services{
-background:#020617;
+/* FORM */
+
+.form-section{
+background:white;
+padding:40px 20px;
 }
 
-.gallery-grid{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
+.form-box{
+max-width:500px;
 }
 
-.gallery-grid img{
-width:300px;
-border-radius:12px;
+input,textarea{
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:16px;
 }
 
-/* CONTACT BUTTONS */
+button{
+background:#229ED9;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+width:100%;
+}
 
-.contact-buttons{
-display:flex;
-gap:15px;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:20px;
+button:hover{
+background:#1b8ac2;
 }
 
 /* MAP */
 
 .map{
+padding:40px 20px;
+}
+
+.map iframe{
 width:100%;
-max-width:900px;
-height:400px;
-margin:auto;
-border-radius:12px;
-overflow:hidden;
-margin-top:30px;
-}
-
-/* FORM */
-
-form{
-max-width:500px;
-margin:30px auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input, textarea{
-padding:12px;
-border-radius:8px;
-border:none;
-font-size:16px;
-}
-
-textarea{
-resize:none;
-height:100px;
-}
-
-/* FLOATING BUTTONS */
-
-.float-container{
-position:fixed;
-bottom:20px;
-left:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-z-index:999;
-}
-
-.float-btn{
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:22px;
-text-decoration:none;
-box-shadow:0 0 15px rgba(0,0,0,.5);
-}
-
-.float-telegram{background:#0088cc;}
-.float-viber{background:#7360f2;}
-.float-call{background:#10b981;}
-
-/* TOP BUTTON */
-
-#topBtn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#3b82f6;
-border:none;
-color:white;
-font-size:18px;
-padding:12px 16px;
+max-width:100%;
 border-radius:10px;
-cursor:pointer;
-display:none;
-}
-
-/* ANIMATION */
-
-.animate{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.show{
-opacity:1;
-transform:translateY(0);
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero img{
-width:100%;
+.hero h1{
+font-size:28px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
+<div class="container header-inner">
 
-<img src="https://cdn.phototourl.com/uploads/2026-02-22-2cd0fc60-3689-4353-82cd-18bd68b3ecaf.png" class="logo">
-
-<nav>
-
-<a href="#hero">Головна</a>
-<a href="#services">Послуги</a>
-<a href="#gallery">Фото</a>
-<a href="#contact">Контакти</a>
-
-</nav>
-
-</header>
-
-
-<section class="hero animate" id="hero">
-
-<img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
-
-<div class="hero-text">
-
-<h1>Автозапчастини для будь-якого автомобіля</h1>
-
-<p>
-Великий асортимент запчастин, аксесуарів, мастил та фільтрів.  
-Можемо замовити деталі для будь-якої марки авто швидко і надійно.
-</p>
-
-<a href="tel:+380961606289" class="button call">
-<i class="fa fa-phone"></i> Подзвонити
+<a href="#" class="logo">
+ГАРАЖ
 </a>
-
-</div>
-
-</section>
-
-
-<section class="services animate" id="services">
-
-<h2>Наші послуги</h2>
-
-<p>
-Підбір автозапчастин, замовлення деталей, продаж аксесуарів, мастил та фільтрів.  
-Працюємо швидко, якісно і допоможемо підібрати потрібну деталь.
-</p>
-
-</section>
-
-
-<section class="animate" id="gallery">
-
-<h2>Фото магазину</h2>
-
-<div class="gallery-grid">
-
-<img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
-<img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
-<img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
-
-</div>
-
-</section>
-
-
-<section class="animate" id="contact">
-
-<h2>Контакти</h2>
-
-<p>м. Звягель, вул. Юрія Глухова 23</p>
-
-<p style="color:#3b82f6;font-size:22px;">
-📞 0 (96) 160 62 89
-</p>
 
 <div class="contact-buttons">
 
-<a href="tel:+380961606289" class="button call">
-<i class="fa fa-phone"></i> Подзвонити
-</a>
-
-<a href="https://t.me/+380961606289" class="button telegram">
+<a href="https://t.me/rmnkbtkn" class="contact-btn telegram">
 <i class="fab fa-telegram"></i> Telegram
 </a>
 
-<a href="viber://chat?number=%2B380961606289" class="button viber">
+<a href="viber://chat?number=%2B380961606289" class="contact-btn viber">
 <i class="fab fa-viber"></i> Viber
+</a>
+
+<a href="tel:+380961606289" class="contact-btn phone">
+<i class="fas fa-phone"></i> Подзвонити
 </a>
 
 </div>
 
+</div>
+</header>
 
-<!-- MAP -->
 
-<div class="map">
+<section class="hero">
 
-<iframe
-width="100%"
-height="100%"
-frameborder="0"
-style="border:0"
-src="https://maps.google.com/maps?q=Звягель%20Юрія%20Глухова%2023&t=&z=15&ie=UTF8&iwloc=&output=embed"
-allowfullscreen>
-</iframe>
+<div class="container">
+
+<h1>Автозапчастини в наявності</h1>
+
+<p>Залиш заявку і ми відповімо в Telegram</p>
 
 </div>
 
+</section>
 
-<!-- FORM -->
 
-<h3 style="margin-top:40px;">Залишити заявку</h3>
+<section class="form-section">
 
-<form>
+<div class="container">
 
-<input type="text" placeholder="Ваше ім'я" required>
+<div class="form-box">
 
-<input type="tel" placeholder="Ваш телефон" required>
+<h2>Залишити заявку</h2>
 
-<textarea placeholder="Яка запчастина потрібна"></textarea>
+<form onsubmit="sendToTelegram(); return false;">
 
-<button class="button call">
+<input type="text" id="name" placeholder="Ваше ім'я" required>
+
+<input type="text" id="phone" placeholder="Телефон" required>
+
+<textarea id="message" placeholder="Яка запчастина потрібна"></textarea>
+
+<button type="submit">
 Відправити заявку
 </button>
 
 </form>
 
-</section>
-
-
-<footer>
-
-© 2026 Магазин ГАРАЖ
-
-</footer>
-
-
-<!-- FLOAT BUTTONS -->
-
-<div class="float-container">
-
-<a href="tel:+380961606289" class="float-btn float-call">
-<i class="fa fa-phone"></i>
-</a>
-
-<a href="https://t.me/+380961606289" class="float-btn float-telegram">
-<i class="fab fa-telegram"></i>
-</a>
-
-<a href="viber://chat?number=%2B380961606289" class="float-btn float-viber">
-<i class="fab fa-viber"></i>
-</a>
+</div>
 
 </div>
 
+</section>
 
-<button onclick="scrollTopSmooth()" id="topBtn">↑</button>
+
+<section class="map">
+
+<div class="container">
+
+<h2>Ми на карті</h2>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483.7445778346207!2d27.603205915426717!3d50.58713935698085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472eb1005d641f09%3A0xbfd5d9dbb084121a!2z0JDQstGC0L4g0LfQsNC_0YfQsNGB0YLQuNC90LggwqvQk9Cw0YDQsNC2wrs!5e0!3m2!1suk!2sua!4v1771926448439!5m2!1suk!2sua"
+height="450"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
 
 
 <script>
 
-/* TOP BUTTON */
+function sendToTelegram(){
 
-window.onscroll=function(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let message=document.getElementById("message").value;
 
-if(document.documentElement.scrollTop>300)
-topBtn.style.display="block";
-else
-topBtn.style.display="none";
+let text="Нова заявка:%0A"
++"Ім'я: "+name+"%0A"
++"Телефон: "+phone+"%0A"
++"Запчастина: "+message;
+
+let url="https://t.me/rmnkbtkn?text="+text;
+
+window.open(url,"_blank");
 
 }
-
-function scrollTopSmooth(){
-window.scrollTo({top:0,behavior:'smooth'});
-}
-
-/* ANIMATION */
-
-const observer=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-
-});
-
-});
-
-document.querySelectorAll(".animate").forEach(el=>observer.observe(el));
 
 </script>
+
 
 </body>
 </html>
