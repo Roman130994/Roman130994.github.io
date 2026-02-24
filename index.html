@@ -1,329 +1,437 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+
+<meta name="google-site-verification" content="-kGnZeBiIA8eJE8WZJa9v3Ok1Ycg6i-_2CAnw-yO3nI" />
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ГАРАЖ — автозапчастини</title>
 
-<!-- Іконки для кнопок -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
 <style>
+
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b1220;
-  color:white;
-  scroll-behavior:smooth;
+margin:0;
+font-family:Arial, sans-serif;
+background:#0b1220;
+color:white;
+scroll-behavior:smooth;
 }
 
 /* HEADER */
+
 header{
-  background:#020617;
-  padding:0 40px;
-  height:120px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #1e293b;
-  position:sticky;
-  top:0;
-  z-index:1000;
+background:#020617;
+padding:0 40px;
+height:110px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid #1e293b;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-/* ЛОГО */
 .logo{
-  height:120px;
-  object-fit:contain;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,.25));
+height:100px;
 }
 
-/* MENU */
 nav{
-  display:flex;
-  gap:40px;
+display:flex;
+gap:30px;
 }
 
 nav a{
-  color:#cbd5e1;
-  text-decoration:none;
-  font-weight:600;
-  letter-spacing:1px;
-  transition:.3s;
+color:#cbd5e1;
+text-decoration:none;
+font-weight:600;
 }
 
 nav a:hover{
-  color:#3b82f6;
+color:#3b82f6;
 }
 
 /* HERO */
+
 .hero{
-  max-width:1200px;
-  margin:60px auto;
-  padding:0 20px;
-  display:flex;
-  align-items:center;
-  gap:60px;
-  position:relative;
+max-width:1200px;
+margin:60px auto;
+padding:20px;
+display:flex;
+gap:50px;
+align-items:center;
 }
 
 .hero img{
-  width:420px;
-  border-radius:16px;
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.4);
-  border-radius:16px;
-  z-index:0;
-}
-
-.hero-text{
-  position:relative;
-  z-index:1;
+width:400px;
+border-radius:16px;
 }
 
 .hero-text h1{
-  font-size:34px;
-  color:#3b82f6;
-  margin-bottom:15px;
+color:#3b82f6;
 }
 
-.hero-text p{
-  color:#cbd5e1;
-  font-size:18px;
-  line-height:1.6;
-}
-
-/* BUTTON */
 .button{
-  display:inline-block;
-  margin-top:25px;
-  background:linear-gradient(90deg,#10b981,#059669);
-  padding:16px 36px;
-  border-radius:12px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  transition:.3s;
-  box-shadow:0 10px 30px rgba(16,185,129,.4);
+display:inline-block;
+margin-top:20px;
+padding:14px 28px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+background:#10b981;
+transition:.3s;
 }
 
 .button:hover{
-  transform:translateY(-3px) scale(1.05);
+transform:scale(1.05);
 }
 
-/* SERVICES */
+.telegram{background:#0088cc;}
+.viber{background:#7360f2;}
+.call{background:#10b981;}
+
+/* SECTIONS */
+
+section{
+padding:70px 20px;
+text-align:center;
+}
+
 .services{
-  background:#020617;
-  padding:70px 20px;
-  text-align:center;
-  border-top:1px solid #1e293b;
-  border-bottom:1px solid #1e293b;
-}
-
-.services h2{
-  color:#3b82f6;
-  margin-bottom:30px;
-}
-
-.services p{
-  max-width:900px;
-  margin:auto;
-  font-size:19px;
-  line-height:1.8;
-  color:#e2e8f0;
-}
-
-.highlight{
-  color:#3b82f6;
-  font-weight:bold;
-}
-
-/* GALLERY */
-.gallery{
-  padding:70px 20px;
-  text-align:center;
-}
-
-.gallery h2{
-  color:#3b82f6;
-  margin-bottom:40px;
+background:#020617;
 }
 
 .gallery-grid{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
 }
 
-.gallery img{
-  width:320px;
-  height:220px;
-  object-fit:cover;
-  border-radius:12px;
-  border:1px solid #1e293b;
-  transition:.3s;
+.gallery-grid img{
+width:300px;
+border-radius:12px;
 }
 
-.gallery img:hover{
-  transform:scale(1.04);
-  box-shadow:0 10px 25px rgba(0,0,0,0.6);
-}
-
-/* CONTACT */
-.contact{
-  text-align:center;
-  padding:80px 20px;
-  background:#020617;
-  border-top:1px solid #1e293b;
-}
-
-.contact h2{
-  color:#3b82f6;
-  margin-bottom:25px;
-}
-
-.contact p{
-  font-size:18px;
-  line-height:1.6;
-  color:#cbd5e1;
-}
+/* CONTACT BUTTONS */
 
 .contact-buttons{
-  display:flex;
-  gap:15px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:25px;
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:20px;
 }
 
-.contact-buttons a{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  justify-content:center;
-  min-width:150px;
+/* MAP */
+
+.map{
+width:100%;
+max-width:900px;
+height:400px;
+margin:auto;
+border-radius:12px;
+overflow:hidden;
+margin-top:30px;
 }
 
-/* FOOTER */
-footer{
-  background:#020617;
-  padding:40px;
-  text-align:center;
-  color:#94a3b8;
-  border-top:1px solid #1e293b;
+/* FORM */
+
+form{
+max-width:500px;
+margin:30px auto;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
-/* ICON COLORS */
-.button.telegram{
-  background:#0088cc;
+input, textarea{
+padding:12px;
+border-radius:8px;
+border:none;
+font-size:16px;
 }
 
-.button.viber{
-  background:#7360f2;
+textarea{
+resize:none;
+height:100px;
+}
+
+/* FLOATING BUTTONS */
+
+.float-container{
+position:fixed;
+bottom:20px;
+left:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:999;
+}
+
+.float-btn{
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 0 15px rgba(0,0,0,.5);
+}
+
+.float-telegram{background:#0088cc;}
+.float-viber{background:#7360f2;}
+.float-call{background:#10b981;}
+
+/* TOP BUTTON */
+
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#3b82f6;
+border:none;
+color:white;
+font-size:18px;
+padding:12px 16px;
+border-radius:10px;
+cursor:pointer;
+display:none;
+}
+
+/* ANIMATION */
+
+.animate{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
 }
 
 /* MOBILE */
+
 @media(max-width:900px){
-  header{
-    flex-direction:column;
-    height:auto;
-    padding:20px;
-    gap:15px;
-  }
 
-  .logo{
-    height:100px;
-  }
-
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero img{
-    width:100%;
-    max-width:420px;
-  }
-
-  .contact-buttons{
-    flex-direction:column;
-  }
+.hero{
+flex-direction:column;
+text-align:center;
 }
-</style>
 
+.hero img{
+width:100%;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <img src="https://cdn.phototourl.com/uploads/2026-02-22-2cd0fc60-3689-4353-82cd-18bd68b3ecaf.png" class="logo">
 
-  <nav>
-    <a href="#hero">Головна</a>
-    <a href="#services">Послуги</a>
-    <a href="#gallery">Фото</a>
-    <a href="#contact">Контакти</a>
-  </nav>
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-2cd0fc60-3689-4353-82cd-18bd68b3ecaf.png" class="logo">
+
+<nav>
+
+<a href="#hero">Головна</a>
+<a href="#services">Послуги</a>
+<a href="#gallery">Фото</a>
+<a href="#contact">Контакти</a>
+
+</nav>
+
 </header>
 
-<main>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
+<section class="hero animate" id="hero">
 
-  <div class="hero-text">
-    <h1>Магазин «ГАРАЖ» — професійний підхід до вашого авто</h1>
-    <p>Якісні автозапчастини, мастила, фільтри та аксесуари. Швидкий підбір деталей для будь-якого автомобіля. У нас великий вибір товарів: від двигунів та гальмівних систем до аксесуарів для салону та технічних рідин. Ми допоможемо знайти необхідну деталь та доставимо її у короткі терміни.</p>
-    <a href="tel:+380961606289" class="button"><i class="fa fa-phone"></i> Швидка консультація</a>
-  </div>
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
+
+<div class="hero-text">
+
+<h1>Автозапчастини для будь-якого автомобіля</h1>
+
+<p>
+Великий асортимент запчастин, аксесуарів, мастил та фільтрів.  
+Можемо замовити деталі для будь-якої марки авто швидко і надійно.
+</p>
+
+<a href="tel:+380961606289" class="button call">
+<i class="fa fa-phone"></i> Подзвонити
+</a>
+
+</div>
+
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <h2>Повний спектр автотоварів</h2>
-  <p>Ми пропонуємо <span class="highlight">аксесуари, мастила та фільтри</span> від провідних брендів. Наші фахівці здійснюють точний підбір запчастин та швидке замовлення деталей під ваше авто. Якщо необхідної деталі немає в наявності, ми замовимо її спеціально для вас у найкоротші терміни. Завжди доступні консультації та допомога у підборі запчастин.</p>
+
+<section class="services animate" id="services">
+
+<h2>Наші послуги</h2>
+
+<p>
+Підбір автозапчастин, замовлення деталей, продаж аксесуарів, мастил та фільтрів.  
+Працюємо швидко, якісно і допоможемо підібрати потрібну деталь.
+</p>
+
 </section>
 
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
-  <h2>Наш магазин</h2>
-  <div class="gallery-grid">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
-  </div>
+
+<section class="animate" id="gallery">
+
+<h2>Фото магазину</h2>
+
+<div class="gallery-grid">
+
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
+<img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
+
+</div>
+
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2>Контакти</h2>
-  <p>м. Звягель, вул. Юрія Глухова 23</p>
-  <p style="font-size:24px;color:#3b82f6;">📞 0 (96) 160 62 89</p>
 
-  <div class="contact-buttons">
-    <a class="button" href="tel:+380961606289"><i class="fa fa-phone"></i> Подзвонити</a>
-    <a class="button telegram" href="https://t.me/+380961606289" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-    <a class="button viber" href="viber://chat?number=%2B380961606289" target="_blank"><i class="fab fa-viber"></i> Viber</a>
-  </div>
+<section class="animate" id="contact">
 
-  <p style="margin-top:30px; max-width:800px; margin-left:auto; margin-right:auto; line-height:1.7; color:#cbd5e1;">
-    У нашому магазині «ГАРАЖ» ви знайдете широкий вибір автозапчастин для будь-яких марок автомобілів. Ми пропонуємо як оригінальні деталі, так і високоякісні аналоги, аксесуари для салону, масла, технічні рідини та інші товари. Завітайте до нас або зв’яжіться телефоном, Telegram чи Viber — ми завжди на зв'язку та готові допомогти.
-  </p>
+<h2>Контакти</h2>
+
+<p>м. Звягель, вул. Юрія Глухова 23</p>
+
+<p style="color:#3b82f6;font-size:22px;">
+📞 0 (96) 160 62 89
+</p>
+
+<div class="contact-buttons">
+
+<a href="tel:+380961606289" class="button call">
+<i class="fa fa-phone"></i> Подзвонити
+</a>
+
+<a href="https://t.me/+380961606289" class="button telegram">
+<i class="fab fa-telegram"></i> Telegram
+</a>
+
+<a href="viber://chat?number=%2B380961606289" class="button viber">
+<i class="fab fa-viber"></i> Viber
+</a>
+
+</div>
+
+
+<!-- MAP -->
+
+<div class="map">
+
+<iframe
+width="100%"
+height="100%"
+frameborder="0"
+style="border:0"
+src="https://maps.google.com/maps?q=Звягель%20Юрія%20Глухова%2023&t=&z=15&ie=UTF8&iwloc=&output=embed"
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+<!-- FORM -->
+
+<h3 style="margin-top:40px;">Залишити заявку</h3>
+
+<form>
+
+<input type="text" placeholder="Ваше ім'я" required>
+
+<input type="tel" placeholder="Ваш телефон" required>
+
+<textarea placeholder="Яка запчастина потрібна"></textarea>
+
+<button class="button call">
+Відправити заявку
+</button>
+
+</form>
+
 </section>
 
-</main>
 
 <footer>
-  © 2026 Магазин автозапчастин "ГАРАЖ"
+
+© 2026 Магазин ГАРАЖ
+
 </footer>
+
+
+<!-- FLOAT BUTTONS -->
+
+<div class="float-container">
+
+<a href="tel:+380961606289" class="float-btn float-call">
+<i class="fa fa-phone"></i>
+</a>
+
+<a href="https://t.me/+380961606289" class="float-btn float-telegram">
+<i class="fab fa-telegram"></i>
+</a>
+
+<a href="viber://chat?number=%2B380961606289" class="float-btn float-viber">
+<i class="fab fa-viber"></i>
+</a>
+
+</div>
+
+
+<button onclick="scrollTopSmooth()" id="topBtn">↑</button>
+
+
+<script>
+
+/* TOP BUTTON */
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>300)
+topBtn.style.display="block";
+else
+topBtn.style.display="none";
+
+}
+
+function scrollTopSmooth(){
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ANIMATION */
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+});
+
+document.querySelectorAll(".animate").forEach(el=>observer.observe(el));
+
+</script>
 
 </body>
 </html>
