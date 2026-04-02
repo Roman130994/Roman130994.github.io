@@ -1,443 +1,1387 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+  <meta name="google-site-verification" content="-kGnZeBiIA8eJE8WZJa9v3Ok1Ycg6i-_2CAnw-yO3nI"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ГАРАЖ — магазин автозапчастин у Звягелі | Запчастини в наявності та під замовлення</title>
+  <meta name="description" content="Магазин автозапчастин ГАРАЖ у Звягелі. Автозапчастини для всіх автомобілів, мастила, фільтри, акумулятори, автохімія. Підбір деталей швидко та професійно.">
+  <meta name="theme-color" content="#020617">
 
-<meta name="google-site-verification" content="-kGnZeBiIA8eJE8WZJa9v3Ok1Ycg6i-_2CAnw-yO3nI"/>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ГАРАЖ — автозапчастини</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg-dark:#020617;
+      --card:#111827;
+      --line:#1e293b;
+      --text:#ffffff;
+      --muted:#cbd5e1;
+      --muted2:#94a3b8;
+      --blue:#3b82f6;
+      --green:#10b981;
+      --telegram:#0088cc;
+      --viber:#7360f2;
+      --danger:#ef4444;
+      --radius:16px;
+      --shadow:0 12px 35px rgba(0,0,0,.28);
+    }
 
-<style>
+    *{
+      box-sizing:border-box;
+    }
 
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b1220;
-  color:white;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:20px;
-}
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-/* HEADER */
-header{
-  background:#020617;
-  border-bottom:1px solid #1e293b;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
+    img{
+      display:block;
+      max-width:100%;
+    }
 
-.header-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    a{
+      text-decoration:none;
+      transition:.25s ease;
+    }
 
-.logo{
-  height:110px;
-}
+    .container{
+      width:min(1200px, calc(100% - 40px));
+      margin:0 auto;
+    }
 
-nav{
-  display:flex;
-  gap:30px;
-}
+    section{
+      padding:75px 0;
+    }
 
-nav a{
-  color:#cbd5e1;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:bold;
-}
+    h1,h2,h3{
+      margin:0 0 18px;
+      line-height:1.2;
+    }
 
-nav a:hover{
-  color:#3b82f6;
-}
+    h1{
+      font-size:clamp(34px, 5vw, 54px);
+    }
 
-/* HERO */
-.hero{
-  display:flex;
-  align-items:center;
-  gap:60px;
-  padding:60px 20px;
-  flex-wrap:wrap;
-}
+    h2{
+      font-size:clamp(28px, 4vw, 40px);
+      color:var(--blue);
+    }
 
-.hero img{
-  width:450px;
-  max-width:100%;
-  border-radius:12px;
-}
+    h3{
+      font-size:22px;
+    }
 
-.hero-text{
-  flex:1;
-  min-width:300px;
-}
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
 
-.hero-text h1{
-  font-size:36px;
-  color:#3b82f6;
-}
+    .section-head{
+      max-width:760px;
+      margin-bottom:30px;
+    }
 
-.hero-text p{
-  font-size:18px;
-  color:#cbd5e1;
-  line-height:1.6;
-}
+    .chip{
+      display:inline-block;
+      padding:8px 14px;
+      border:1px solid rgba(59,130,246,.35);
+      color:#bfdbfe;
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:18px;
+      background:rgba(59,130,246,.08);
+    }
 
-/* BUTTON */
-.button{
-  display:inline-block;
-  padding:14px 28px;
-  border-radius:8px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  margin:5px;
-}
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(2,6,23,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
 
-.tel{background:#10b981;}
-.tg{background:#0088cc;}
-.vb{background:#7360f2;}
-.map-btn{background:#3b82f6;}
+    .header-inner{
+      min-height:88px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
 
-.button:hover{
-  opacity:0.85;
-}
+    .logo{
+      height:78px;
+      width:auto;
+      object-fit:contain;
+    }
 
-/* ABOUT */
-.about{
-  background:#020617;
-  padding:60px 20px;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
 
-.about p{
-  font-size:18px;
-  line-height:1.7;
-  color:#cbd5e1;
-}
+    .nav a{
+      color:var(--muted);
+      font-weight:700;
+      font-size:16px;
+    }
 
-/* GALLERY */
-.gallery{
-  padding:60px 20px;
-}
+    .nav a:hover{
+      color:var(--blue);
+    }
 
-.gallery-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-}
+    .header-phone{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:10px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:700;
+      box-shadow:var(--shadow);
+    }
 
-.gallery-grid img{
-  width:350px;
-  max-width:100%;
-  border-radius:10px;
-}
+    .header-phone:hover{
+      opacity:.9;
+      transform:translateY(-1px);
+    }
 
-/* CONTACT */
-.contact{
-  background:#020617;
-  padding:60px 20px;
-}
+    .menu-toggle{
+      display:none;
+      background:none;
+      border:none;
+      color:#fff;
+      font-size:28px;
+      cursor:pointer;
+    }
 
-.contact-grid{
-  display:flex;
-  gap:60px;
-  flex-wrap:wrap;
-}
+    /* HERO */
+    .hero{
+      padding:70px 0 40px;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,.18), transparent 28%),
+        radial-gradient(circle at left center, rgba(16,185,129,.10), transparent 20%);
+    }
 
-.contact-info{
-  flex:1;
-  min-width:300px;
-}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:50px;
+      align-items:center;
+    }
 
-.contact-info p{
-  font-size:18px;
-  margin:10px 0;
-  color:#cbd5e1;
-}
+    .hero-text p{
+      font-size:18px;
+      max-width:700px;
+    }
 
-.form-box{
-  flex:1;
-  min-width:300px;
-  background:#0b1220;
-  padding:25px;
-  border-radius:10px;
-}
+    .hero-list{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin:26px 0 30px;
+      padding:0;
+      list-style:none;
+    }
 
-input, textarea{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border-radius:6px;
-  border:none;
-  font-size:16px;
-}
+    .hero-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      padding:14px 16px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:14px;
+      color:var(--muted);
+    }
 
-.submit{
-  background:#10b981;
-  margin-top:15px;
-  cursor:pointer;
-}
+    .hero-list i{
+      color:var(--green);
+      margin-top:2px;
+    }
 
-.success{
-  display:none;
-  color:#10b981;
-  margin-top:10px;
-}
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:10px;
+    }
 
-/* MAP PREVIEW */
-.map{
-  margin-top:40px;
-}
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:50px;
+      padding:14px 24px;
+      border:none;
+      border-radius:12px;
+      color:#fff;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+    }
 
-.map-preview{
-  position:relative;
-  cursor:pointer;
-  border-radius:12px;
-  overflow:hidden;
-}
+    .button:hover{
+      transform:translateY(-2px);
+      opacity:.93;
+    }
 
-.map-preview img{
-  width:100%;
-  display:block;
-}
+    .button-blue{ background:var(--blue); }
+    .button-green{ background:var(--green); }
+    .button-tg{ background:var(--telegram); }
+    .button-vb{ background:var(--viber); }
 
-.map-overlay{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.5);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  font-size:22px;
-  color:white;
-  transition:0.3s;
-  text-align:center;
-}
+    .hero-image-wrap{
+      position:relative;
+    }
 
-.map-preview:hover .map-overlay{
-  background:rgba(0,0,0,0.7);
-}
+    .hero-image{
+      width:100%;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      object-fit:cover;
+      min-height:420px;
+    }
 
-/* MODAL WITH ANIMATION AND SCALE EFFECT */
-.map-modal{
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0);
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+    .hero-badge{
+      position:absolute;
+      bottom:18px;
+      left:18px;
+      background:rgba(2,6,23,.9);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px 18px;
+      box-shadow:var(--shadow);
+      max-width:260px;
+    }
 
-.map-modal.show{
-  display: block;
-  opacity: 1;
-  background: rgba(0,0,0,0.8);
-}
+    .hero-badge strong{
+      display:block;
+      font-size:18px;
+      margin-bottom:6px;
+    }
 
-.map-modal-content{
-  position: absolute;
-  top: -100%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
-  background: black;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: top 0.4s ease, transform 0.4s ease;
-  transform: scale(0.8);
-}
+    .hero-badge span{
+      color:var(--muted);
+      font-size:14px;
+    }
 
-.map-modal.show .map-modal-content{
-  top: 5%;
-  transform: scale(1);
-}
+    /* FEATURES */
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:20px;
+    }
 
-.map-close{
-  position:absolute;
-  top:10px;
-  right:20px;
-  font-size:35px;
-  cursor:pointer;
-  color:white;
-  z-index:10;
-}
+    .feature-card{
+      background:var(--bg-dark);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:26px 22px;
+      box-shadow:var(--shadow);
+    }
 
-.map-actions{
-  position:absolute;
-  bottom:15px;
-  right:15px;
-  z-index:10;
-  display:flex;
-  gap:10px;
-}
+    .feature-icon{
+      width:54px;
+      height:54px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      background:rgba(59,130,246,.12);
+      color:var(--blue);
+      font-size:22px;
+      margin-bottom:18px;
+    }
 
-.map-actions a{
-  padding:10px 15px;
-  border-radius:8px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  background:#10b981;
-}
+    .feature-card p{
+      margin-bottom:0;
+      font-size:15px;
+    }
 
-.map-actions a:hover{
-  opacity:0.85;
-}
+    /* ABOUT */
+    .about{
+      background:var(--bg-dark);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
 
-/* FOOTER */
-footer{
-  background:#020617;
-  padding:25px;
-  text-align:center;
-  color:#94a3b8;
-}
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:start;
+    }
 
-</style>
+    .about-box{
+      background:rgba(255,255,255,.02);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:28px;
+    }
 
+    .about-list{
+      list-style:none;
+      padding:0;
+      margin:20px 0 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .about-list li{
+      display:flex;
+      gap:12px;
+      color:var(--muted);
+    }
+
+    .about-list i{
+      color:var(--green);
+      margin-top:4px;
+    }
+
+    /* CATEGORIES */
+    .categories-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:20px;
+    }
+
+    .category-card{
+      padding:24px;
+      border-radius:18px;
+      background:var(--bg-dark);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .category-card i{
+      font-size:26px;
+      color:var(--blue);
+      margin-bottom:14px;
+    }
+
+    .category-card p{
+      margin-bottom:0;
+      font-size:15px;
+    }
+
+    /* TRUST */
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .trust-item{
+      text-align:center;
+      background:var(--bg-dark);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:28px 18px;
+      box-shadow:var(--shadow);
+    }
+
+    .trust-item strong{
+      display:block;
+      font-size:30px;
+      color:var(--blue);
+      margin-bottom:8px;
+    }
+
+    .trust-item span{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* GALLERY */
+    .gallery{
+      background:var(--bg-dark);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:20px;
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      background:#000;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      transition:transform .35s ease, opacity .35s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.05);
+      opacity:.9;
+    }
+
+    .gallery-caption{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:16px;
+      background:linear-gradient(to top, rgba(0,0,0,.82), transparent);
+      color:#fff;
+      font-weight:700;
+      font-size:15px;
+    }
+
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+
+    .contact-card,
+    .form-box{
+      background:var(--bg-dark);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-info{
+      display:grid;
+      gap:14px;
+      margin-bottom:22px;
+    }
+
+    .contact-row{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      color:var(--muted);
+    }
+
+    .contact-row i{
+      width:22px;
+      color:var(--blue);
+      margin-top:3px;
+    }
+
+    .contact-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .form-box form{
+      display:grid;
+      gap:14px;
+    }
+
+    label{
+      font-size:15px;
+      font-weight:700;
+      color:#e2e8f0;
+      margin-bottom:6px;
+      display:block;
+    }
+
+    .field{
+      width:100%;
+      padding:14px 15px;
+      border-radius:12px;
+      border:1px solid #334155;
+      background:#0f172a;
+      color:#fff;
+      font-size:16px;
+      outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .field:focus{
+      border-color:var(--blue);
+      box-shadow:0 0 0 4px rgba(59,130,246,.12);
+    }
+
+    textarea.field{
+      min-height:130px;
+      resize:vertical;
+    }
+
+    .form-note{
+      font-size:14px;
+      color:var(--muted2);
+      margin-top:2px;
+    }
+
+    .form-status{
+      display:none;
+      margin-top:4px;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:700;
+    }
+
+    .form-status.success{
+      display:none;
+      background:rgba(16,185,129,.12);
+      color:#6ee7b7;
+      border:1px solid rgba(16,185,129,.25);
+    }
+
+    .form-status.error{
+      display:none;
+      background:rgba(239,68,68,.10);
+      color:#fca5a5;
+      border:1px solid rgba(239,68,68,.24);
+    }
+
+    .submit-btn{
+      width:100%;
+      background:var(--green);
+      font-size:16px;
+    }
+
+    .submit-btn:disabled{
+      opacity:.7;
+      cursor:not-allowed;
+      transform:none;
+    }
+
+    /* MAP */
+    .map{
+      margin-top:28px;
+    }
+
+    .map-preview{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      background:#000;
+    }
+
+    .map-preview img{
+      width:100%;
+      min-height:360px;
+      object-fit:cover;
+    }
+
+    .map-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+      background:rgba(0,0,0,.38);
+      color:#fff;
+      transition:.25s ease;
+    }
+
+    .map-overlay i{
+      font-size:40px;
+      margin-bottom:14px;
+    }
+
+    .map-overlay p{
+      color:#fff;
+      font-size:22px;
+      font-weight:700;
+      margin:0;
+    }
+
+    .map-preview:hover .map-overlay{
+      background:rgba(0,0,0,.55);
+    }
+
+    .map-modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      opacity:0;
+      background:rgba(0,0,0,.0);
+      z-index:9999;
+      transition:opacity .3s ease, background .3s ease;
+    }
+
+    .map-modal.show{
+      display:block;
+      opacity:1;
+      background:rgba(0,0,0,.82);
+    }
+
+    .map-modal-content{
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:min(92vw, 1200px);
+      height:min(84vh, 760px);
+      transform:translate(-50%, -45%) scale(.92);
+      background:#000;
+      border-radius:18px;
+      overflow:hidden;
+      transition:transform .35s ease;
+      box-shadow:0 18px 50px rgba(0,0,0,.45);
+    }
+
+    .map-modal.show .map-modal-content{
+      transform:translate(-50%, -50%) scale(1);
+    }
+
+    .map-close{
+      position:absolute;
+      top:14px;
+      right:18px;
+      z-index:20;
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:50%;
+      background:rgba(0,0,0,.55);
+      color:#fff;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+    .map-actions{
+      position:absolute;
+      right:16px;
+      bottom:16px;
+      z-index:10;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .map-actions a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:10px;
+      color:#fff;
+      background:var(--green);
+      font-weight:700;
+      box-shadow:var(--shadow);
+    }
+
+    .map-actions a:last-child{
+      background:var(--blue);
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      display:none;
+      opacity:0;
+      background:rgba(0,0,0,.88);
+      z-index:9998;
+      transition:opacity .28s ease;
+    }
+
+    .lightbox.show{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      opacity:1;
+    }
+
+    .lightbox-content{
+      position:relative;
+      width:min(92vw, 1100px);
+      max-height:90vh;
+      padding:20px;
+    }
+
+    .lightbox-content img{
+      width:100%;
+      max-height:80vh;
+      object-fit:contain;
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      background:#000;
+    }
+
+    .lightbox-close{
+      position:absolute;
+      top:-6px;
+      right:4px;
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+    footer{
+      background:var(--bg-dark);
+      border-top:1px solid var(--line);
+      padding:28px 0;
+      color:var(--muted2);
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer-inner p{
+      margin:0;
+      color:var(--muted2);
+      font-size:14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 1024px){
+      .hero-grid,
+      .about-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .features-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .categories-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .trust-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .gallery-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 768px){
+      .header-inner{
+        min-height:78px;
+      }
+
+      .logo{
+        height:62px;
+      }
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+        background:#020617;
+        border-bottom:1px solid var(--line);
+        padding:10px 20px 18px;
+      }
+
+      .nav.show{
+        display:flex;
+      }
+
+      .nav a{
+        width:100%;
+        padding:14px 0;
+        border-bottom:1px solid rgba(255,255,255,.05);
+      }
+
+      .header-phone{
+        display:none;
+      }
+
+      .hero{
+        padding-top:40px;
+      }
+
+      .hero-list{
+        grid-template-columns:1fr;
+      }
+
+      .features-grid,
+      .categories-grid,
+      .trust-grid,
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-actions,
+      .contact-actions{
+        flex-direction:column;
+      }
+
+      .button{
+        width:100%;
+      }
+
+      .map-actions{
+        left:16px;
+        right:16px;
+        bottom:16px;
+      }
+
+      .map-actions a{
+        justify-content:center;
+        flex:1 1 100%;
+      }
+
+      .map-preview img{
+        min-height:280px;
+      }
+
+      .gallery-item img{
+        height:240px;
+      }
+
+      section{
+        padding:58px 0;
+      }
+
+      .container{
+        width:min(100% - 28px, 1200px);
+      }
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
   <div class="container header-inner">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-2cd0fc60-3689-4353-82cd-18bd68b3ecaf.png" class="logo">
-    <nav>
-      <a href="#">Головна</a>
-      <a href="#about">Про нас</a>
+    <a href="#top" aria-label="ГАРАЖ — на головну">
+      <img src="https://cdn.phototourl.com/uploads/2026-02-22-2cd0fc60-3689-4353-82cd-18bd68b3ecaf.png" class="logo" alt="Логотип магазину автозапчастин ГАРАЖ">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Відкрити меню">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="#top">Головна</a>
+      <a href="#about">Про магазин</a>
+      <a href="#categories">Категорії</a>
       <a href="#gallery">Фото</a>
       <a href="#contact">Контакти</a>
     </nav>
+
+    <a href="tel:+380961606289" class="header-phone">
+      <i class="fa-solid fa-phone"></i>
+      +380 96 160 62 89
+    </a>
   </div>
 </header>
 
-<section class="container hero">
-  <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
-  <div class="hero-text">
-    <h1>Автозапчастини для всіх автомобілів</h1>
-    <p>Магазин "ГАРАЖ" пропонує великий вибір автозапчастин, аксесуарів, мастил та автохімії. Ми підберемо деталі для будь-якого автомобіля швидко та професійно.</p>
-  </div>
-</section>
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="chip">Автозапчастини у Звягелі</span>
+        <h1>Автозапчастини для всіх автомобілів</h1>
+        <p>Магазин <strong>«ГАРАЖ»</strong> пропонує великий вибір автозапчастин, аксесуарів, мастил та автохімії. Підберемо потрібні деталі швидко, точно та професійно — як із наявності, так і під замовлення.</p>
 
-<section id="about" class="about container">
-  <h2 style="color:#3b82f6;">Про магазин</h2>
-  <p>У нас великий асортимент запчастин в наявності та під замовлення. Ми можемо замовити запчастини до будь-якого автомобіля.<br><br>
-  В наявності:<br>
-  — двигун<br>  
-  — ходова<br>  
-  — фільтри<br>  
-  — мастила<br>  
-  — акумулятори<br>  
-  — аксесуари<br><br>
-  Гарантуємо якість та швидку доставку.</p>
-</section>
+        <ul class="hero-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Підбір запчастин для різних марок і моделей автомобілів</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Запчастини в наявності та оперативне замовлення потрібних позицій</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Мастила, фільтри, акумулятори, автохімія та аксесуари</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Консультація та допомога з підбором сумісних деталей</span></li>
+        </ul>
 
-<section id="gallery" class="gallery container">
-  <h2 style="color:#3b82f6;">Фото магазину</h2>
-  <div class="gallery-grid">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg">
-    <img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg">
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="container contact-grid">
-    <div class="contact-info">
-      <h2 style="color:#3b82f6;">Контакти</h2>
-      <p>📍 м. Звягель, вул. Юрія Глухова 23</p>
-      <p>🕒 Пн-Пт: 9:00 – 18:00</p>
-      <p>📞 +380 (96) 160 62 89</p>
-
-      <a href="tel:+380961606289" class="button tel">Подзвонити</a>
-      <a href="https://t.me/+380961606289" class="button tg">Написати в Telegram</a>
-      <a href="viber://chat?number=%2B380961606289" class="button vb">Написати в Viber</a>
-    </div>
-
-    <div class="form-box">
-      <h2>Заявка на запчастини</h2>
-      <form id="form">
-        <input type="text" id="name" placeholder="Ваше ім'я" required>
-        <input type="tel" id="phone" placeholder="Телефон" required>
-        <textarea id="message" placeholder="Яка запчастина потрібна"></textarea>
-        <input type="submit" value="Відправити заявку" class="button submit">
-        <div class="success" id="success">Заявку відправлено!</div>
-      </form>
-    </div>
-  </div>
-
-  <!-- MAP PREVIEW BLOCK -->
-  <div class="container map">
-    <h2 style="color:#3b82f6;">Ми на карті</h2>
-    <div class="map-preview" onclick="openMap()">
-      <div class="map-overlay">
-        <i class="fa fa-map-location-dot"></i>
-        <p>Натисніть щоб відкрити карту</p>
+        <div class="hero-actions">
+          <a href="tel:+380961606289" class="button button-green">
+            <i class="fa-solid fa-phone"></i>
+            Подзвонити
+          </a>
+          <a href="#contact" class="button button-blue">
+            <i class="fa-solid fa-paper-plane"></i>
+            Залишити заявку
+          </a>
+        </div>
       </div>
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=50.58713935698085,27.603205915426717&zoom=17&size=1200x400&markers=color:red%7C50.58713935698085,27.603205915426717">
-    </div>
-  </div>
 
-  <!-- POPUP MAP -->
-  <div id="mapModal" class="map-modal">
-    <div class="map-modal-content">
-      <span class="map-close" onclick="closeMap()">×</span>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483.7445778346207!2d27.603205915426717!3d50.58713935698085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472eb1005d641f09%3A0xbfd5d9dbb084121a!2z0JDQstGC0L4g0LfQsNC_0YfQsNGB0YLQuNC90LggwqvQk9Cw0YDQsNC2wrs!5e0!3m2!1suk!2sua!4v1771926448439!5m2!1suk!2sua"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen>
-      </iframe>
-      <div class="map-actions">
-        <a href="https://www.google.com/maps/dir/?api=1&destination=50.58713935698085,27.603205915426717" target="_blank">Прокласти маршрут</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=50.58713935698085,27.603205915426717" target="_blank">Відкрити в Google Maps</a>
+      <div class="hero-image-wrap">
+        <img
+          src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg"
+          alt="Магазин автозапчастин ГАРАЖ у Звягелі"
+          class="hero-image"
+          loading="eager"
+        >
+        <div class="hero-badge">
+          <strong>Швидкий підбір деталей</strong>
+          <span>Допоможемо знайти потрібну запчастину для вашого автомобіля.</span>
+        </div>
       </div>
     </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="chip">Чому обирають нас</span>
+        <h2>Надійний магазин автозапчастин для щоденних потреб автомобіліста</h2>
+        <p>Ми орієнтуємося на практичний сервіс, точний підбір і швидке обслуговування. Наше завдання — допомогти вам знайти потрібну деталь без зайвих затримок.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3>Широкий асортимент</h3>
+          <p>Пропонуємо запчастини, мастила, фільтри, акумулятори, автохімію та аксесуари для різних автомобілів.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>Оперативне замовлення</h3>
+          <p>Якщо потрібної позиції немає в наявності, допоможемо швидко замовити її у постачальника.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <h3>Професійна консультація</h3>
+          <p>Підкажемо оптимальний варіант і допоможемо вибрати сумісну деталь для вашого авто.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Якість і надійність</h3>
+          <p>Працюємо з перевіреними товарами та дбаємо про стабільний рівень сервісу для клієнтів.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div>
+        <span class="chip">Про магазин</span>
+        <h2>Все необхідне для обслуговування автомобіля в одному місці</h2>
+        <p>Магазин <strong>«ГАРАЖ»</strong> — це зручне місце для підбору автозапчастин та супутніх товарів. Ми працюємо з популярними категоріями деталей і допомагаємо клієнтам швидко знаходити потрібні рішення для ремонту, обслуговування та щоденної експлуатації автомобіля.</p>
+        <p>У нас можна придбати товари з наявності або оформити замовлення на потрібні позиції. Ми орієнтуємося на практичний підхід, зрозуміле консультування та швидке опрацювання запитів.</p>
+      </div>
+
+      <div class="about-box">
+        <h3>Що у нас можна знайти</h3>
+        <ul class="about-list">
+          <li><i class="fa-solid fa-check"></i><span>Деталі двигуна</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Ходову частину</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Фільтри та витратні матеріали</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Мастила та технічні рідини</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Акумулятори</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Аксесуари та автохімію</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="container">
+      <div class="section-head">
+        <span class="chip">Основні категорії</span>
+        <h2>Запчастини та товари для різних потреб автомобіля</h2>
+        <p>Ми працюємо з найбільш затребуваними категоріями товарів, які потрібні для ремонту, обслуговування та щоденної експлуатації авто.</p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-card">
+          <i class="fa-solid fa-engine"></i>
+          <h3>Двигун</h3>
+          <p>Товари та комплектуючі для підтримки справної роботи двигуна та його основних систем.</p>
+        </div>
+
+        <div class="category-card">
+          <i class="fa-solid fa-gears"></i>
+          <h3>Ходова частина</h3>
+          <p>Деталі для підвіски, стабільної керованості автомобіля та надійної роботи вузлів ходової.</p>
+        </div>
+
+        <div class="category-card">
+          <i class="fa-solid fa-filter"></i>
+          <h3>Фільтри</h3>
+          <p>Повітряні, паливні, салонні та масляні фільтри для планового обслуговування автомобіля.</p>
+        </div>
+
+        <div class="category-card">
+          <i class="fa-solid fa-oil-can"></i>
+          <h3>Мастила</h3>
+          <p>Моторні оливи, технічні рідини та інші матеріали для регулярного сервісного догляду.</p>
+        </div>
+
+        <div class="category-card">
+          <i class="fa-solid fa-car-battery"></i>
+          <h3>Акумулятори</h3>
+          <p>Акумуляторні батареї для різних типів автомобілів із можливістю підбору потрібного варіанта.</p>
+        </div>
+
+        <div class="category-card">
+          <i class="fa-solid fa-spray-can-sparkles"></i>
+          <h3>Автохімія та аксесуари</h3>
+          <p>Товари для догляду за автомобілем, підтримки чистоти, комфорту та зручності використання.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="container">
+      <div class="section-head">
+        <span class="chip">Переваги співпраці</span>
+        <h2>Чіткий сервіс і зручний процес замовлення</h2>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <strong>Швидко</strong>
+          <span>Оперативно обробляємо заявки та допомагаємо знайти потрібний товар.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Точно</strong>
+          <span>Підбираємо деталі з урахуванням параметрів автомобіля та запиту клієнта.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Зручно</strong>
+          <span>Можна звернутися телефоном, через Telegram, Viber або форму на сайті.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Практично</strong>
+          <span>Товари з наявності та під замовлення для регулярного обслуговування авто.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="chip">Фото магазину</span>
+        <h2>Ознайомтесь із магазином</h2>
+        <p>Декілька фото магазину, щоб ви могли краще зорієнтуватися перед візитом.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg')">
+          <img src="https://cdn.phototourl.com/uploads/2026-02-22-bc48437c-6e9e-48d0-94f0-ccf3fc84c63d.jpg" alt="Фото магазину автозапчастин ГАРАЖ" loading="lazy">
+          <div class="gallery-caption">Торговий зал</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg')">
+          <img src="https://cdn.phototourl.com/uploads/2026-02-22-5a40a0c3-dea2-4a3c-b30c-e8fe3fc8f93d.jpg" alt="Асортимент автозапчастин у магазині ГАРАЖ" loading="lazy">
+          <div class="gallery-caption">Асортимент товарів</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg')">
+          <img src="https://cdn.phototourl.com/uploads/2026-02-22-ce697632-35b5-400a-932e-20418560bca1.jpg" alt="Інтер’єр магазину автозапчастин ГАРАЖ" loading="lazy">
+          <div class="gallery-caption">Інтер’єр магазину</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="chip">Контакти</span>
+        <h2>Зв’яжіться з нами зручним способом</h2>
+        <p>Телефонуйте, пишіть у месенджери або залишайте заявку через форму — ми допоможемо підібрати необхідну запчастину.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Контактна інформація</h3>
+
+          <div class="contact-info">
+            <div class="contact-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>м. Звягель, вул. Юрія Глухова, 23</div>
+            </div>
+
+            <div class="contact-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>Пн–Пт: 9:00 – 18:00</div>
+            </div>
+
+            <div class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <div><a href="tel:+380961606289" style="color:#fff;">+380 (96) 160 62 89</a></div>
+            </div>
+          </div>
+
+          <div class="contact-actions">
+            <a href="tel:+380961606289" class="button button-green">
+              <i class="fa-solid fa-phone"></i>
+              Подзвонити
+            </a>
+
+            <a href="https://t.me/+380961606289" target="_blank" rel="noopener noreferrer" class="button button-tg">
+              <i class="fa-brands fa-telegram"></i>
+              Написати в Telegram
+            </a>
+
+            <a href="viber://chat?number=%2B380961606289" class="button button-vb">
+              <i class="fa-brands fa-viber"></i>
+              Написати в Viber
+            </a>
+          </div>
+        </div>
+
+        <div class="form-box">
+          <h3>Заявка на запчастини</h3>
+          <p class="form-note">Вкажіть контактні дані та коротко опишіть, яка запчастина вам потрібна.</p>
+
+          <form id="form">
+            <div>
+              <label for="name">Ваше ім’я</label>
+              <input class="field" type="text" id="name" name="name" placeholder="Введіть ваше ім’я" autocomplete="name" required>
+            </div>
+
+            <div>
+              <label for="phone">Телефон</label>
+              <input class="field" type="tel" id="phone" name="phone" placeholder="+380..." autocomplete="tel" required>
+            </div>
+
+            <div>
+              <label for="message">Яка запчастина потрібна</label>
+              <textarea class="field" id="message" name="message" placeholder="Напишіть, що саме вам потрібно"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="button submit-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+              Відправити заявку
+            </button>
+
+            <div id="success" class="form-status success">Заявку успішно відправлено.</div>
+            <div id="error" class="form-status error">Не вдалося відправити заявку. Спробуйте ще раз.</div>
+          </form>
+        </div>
+      </div>
+
+      <div class="map">
+        <h2>Ми на карті</h2>
+        <div class="map-preview" onclick="openMap()">
+          <div class="map-overlay">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p>Натисніть, щоб відкрити карту</p>
+          </div>
+          <img
+            src="https://maps.googleapis.com/maps/api/staticmap?center=50.58713935698085,27.603205915426717&zoom=17&size=1200x400&markers=color:red%7C50.58713935698085,27.603205915426717"
+            alt="Розташування магазину ГАРАЖ на карті"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="mapModal" class="map-modal" aria-hidden="true">
+  <div class="map-modal-content">
+    <button class="map-close" onclick="closeMap()" aria-label="Закрити карту">×</button>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483.7445778346207!2d27.603205915426717!3d50.58713935698085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472eb1005d641f09%3A0xbfd5d9dbb084121a!2z0JDQstGC0L4g0LfQsNC_0YfQsNGB0YLQuNC90LggwqvQk9Cw0YDQsNC2wrs!5e0!3m2!1suk!2sua!4v1771926448439!5m2!1suk!2sua"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <div class="map-actions">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=50.58713935698085,27.603205915426717" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-route"></i>
+        Прокласти маршрут
+      </a>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=50.58713935698085,27.603205915426717" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-location-arrow"></i>
+        Відкрити в Google Maps
+      </a>
+    </div>
   </div>
-</section>
+</div>
+
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Закрити фото">×</button>
+    <img id="lightboxImage" src="" alt="Збільшене фото магазину">
+  </div>
+</div>
 
 <footer>
-  © 2026 Магазин автозапчастин ГАРАЖ
+  <div class="container footer-inner">
+    <p>© 2026 Магазин автозапчастин «ГАРАЖ»</p>
+    <p>м. Звягель, вул. Юрія Глухова, 23 · Пн–Пт: 9:00 – 18:00 · +380 (96) 160 62 89</p>
+  </div>
 </footer>
 
 <script>
-document.getElementById("form").addEventListener("submit", function(e){
-  e.preventDefault();
-  let name=document.getElementById("name").value;
-  let phone=document.getElementById("phone").value;
-  let message=document.getElementById("message").value;
-  let text="Нова заявка%0AІм'я: "+name+"%0AТелефон: "+phone+"%0AЗапчастина: "+message;
-  fetch("https://api.telegram.org/bot8593764923:AAEe6eDBCeXR5wn6USyP0QcE922BWvra5cw/sendMessage?chat_id=1864685581&text="+text);
-  document.getElementById("success").style.display="block";
-  document.getElementById("form").reset();
-});
+  const menuToggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("nav");
 
-// MAP MODAL FUNCTIONS
-function openMap(){
-  const modal = document.getElementById("mapModal");
-  modal.classList.add("show");
-}
+  menuToggle.addEventListener("click", function(){
+    nav.classList.toggle("show");
+  });
 
-function closeMap(){
-  const modal = document.getElementById("mapModal");
-  modal.classList.remove("show");
-  setTimeout(()=>{ modal.style.display="none"; }, 400);
-}
+  document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => nav.classList.remove('show'));
+  });
+
+  const form = document.getElementById("form");
+  const submitBtn = document.getElementById("submitBtn");
+  const successBox = document.getElementById("success");
+  const errorBox = document.getElementById("error");
+
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    successBox.style.display = "none";
+    errorBox.style.display = "none";
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if(name.length < 2){
+      errorBox.textContent = "Вкажіть коректне ім’я.";
+      errorBox.style.display = "block";
+      return;
+    }
+
+    if(phone.length < 8){
+      errorBox.textContent = "Вкажіть коректний номер телефону.";
+      errorBox.style.display = "block";
+      return;
+    }
+
+    const text = encodeURIComponent(
+      "Нова заявка\n" +
+      "Ім'я: " + name + "\n" +
+      "Телефон: " + phone + "\n" +
+      "Запчастина: " + (message || "Не вказано")
+    );
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Відправлення...';
+
+    try{
+      const response = await fetch(
+        "https://api.telegram.org/bot8593764923:AAEe6eDBCeXR5wn6USyP0QcE922BWvra5cw/sendMessage?chat_id=1864685581&text=" + text
+      );
+
+      if(!response.ok){
+        throw new Error("Помилка відправки");
+      }
+
+      successBox.style.display = "block";
+      form.reset();
+    }catch(error){
+      errorBox.textContent = "Не вдалося відправити заявку. Перевірте інтернет або спробуйте пізніше.";
+      errorBox.style.display = "block";
+    }finally{
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Відправити заявку';
+    }
+  });
+
+  function openMap(){
+    const modal = document.getElementById("mapModal");
+    modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
+    setTimeout(() => {
+      modal.classList.add("show");
+    }, 10);
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMap(){
+    const modal = document.getElementById("mapModal");
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 350);
+    document.body.style.overflow = "";
+  }
+
+  function openLightbox(src){
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    lightboxImage.src = src;
+    lightbox.style.display = "flex";
+    lightbox.setAttribute("aria-hidden", "false");
+    setTimeout(() => {
+      lightbox.classList.add("show");
+    }, 10);
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox(){
+    const lightbox = document.getElementById("lightbox");
+    lightbox.classList.remove("show");
+    lightbox.setAttribute("aria-hidden", "true");
+    setTimeout(() => {
+      lightbox.style.display = "none";
+      document.getElementById("lightboxImage").src = "";
+    }, 280);
+    document.body.style.overflow = "";
+  }
+
+  document.getElementById("mapModal").addEventListener("click", function(e){
+    if(e.target === this){
+      closeMap();
+    }
+  });
+
+  document.getElementById("lightbox").addEventListener("click", function(e){
+    if(e.target === this){
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      closeMap();
+      closeLightbox();
+    }
+  });
 </script>
 
 </body>
